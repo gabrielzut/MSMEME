@@ -16,8 +16,13 @@ body {
   overflow: scroll;
 }
 
-.contatos{
-  
+.imgperfil:hover{
+  cursor: pointer;
+}
+
+.aligncentro{
+  display: flex;
+  align-items: center;
 }
 
 .contatos:hover{
@@ -37,7 +42,6 @@ body {
 .login {
   margin: auto;
   height: 100%;
-  align-self: center;
   max-width: 450px;
   font-size: 18px;
 }
