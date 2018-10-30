@@ -9,10 +9,21 @@ html {
 
 body {
   margin-bottom: 60px;
+  height: 100%; 
+  display: grid;
+}
+
+p {
+  word-wrap: break-word;
 }
 
 .lista {
   height: 47vh;
+  overflow: scroll;
+}
+
+.listaConversa {
+  height: 65vh;
   overflow: scroll;
 }
 
@@ -30,7 +41,25 @@ body {
   cursor: pointer;
 }
 
-.footer {
+.mensagens{
+  position: relative;
+}
+
+textarea{
+  resize: none;
+}
+
+.campoMensagem{
+  position: absolute;
+  width: 100%;
+  bottom: 0px;
+}
+
+.conversas{
+  margin: auto;
+}
+
+footer {
   position: absolute;
   bottom: 0px;
   width: 100%;
