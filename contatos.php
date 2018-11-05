@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" type="text/CSS" href="estilo.css">
     <title>MSMEME</title>
+    <?php header('Content-Type: text/html; charset=utf-8');?>
 </head>
 
 <body class="bg-light">
@@ -56,100 +57,17 @@
                     <p class="mt-1"><img src="perfil.png" class="rounded border border-success status rounded imgperfil" width="100px"></p>
                 </div>
                 <div class="col-md-10 col-xs-12">
-                    <h1>Nickname</h1>
-                    <h5>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                        a força" - Meu amigo robso</h5>
+                    <h1><?php echo $_SESSION['nickname'];?></h1>
+                    <h5><?php echo $_SESSION['frase'];?></h5>
                 </div>
             </div>
+        </div>
+        <div class="text-right">
+            
         </div>
     </div>
     <div class="lista">
         <div class="container-fluid pt-1 px-5 bg-light flex-fill">
-            <div class="container text-center text-md-left contatos">
-                <div class="row">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <hr>
-                </div>
-            </div>
-            <div class="container text-center text-md-left contatos">
-                <div class="row">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <hr>
-                </div>
-            </div>
-            <div class="container text-center text-md-left contatos">
-                <div class="row">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <hr>
-                </div>
-            </div>
-            <div class="container text-center text-md-left contatos">
-                <div class="row">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <hr>
-                </div>
-            </div>
-            <div class="container text-center text-md-left contatos">
-                <div class="row">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <hr>
-                </div>
-            </div>
             <div class="container text-center text-md-left contatos">
                 <div class="row">
                     <div class="col-md-1 col-xs-12">

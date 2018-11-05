@@ -1,4 +1,5 @@
 <?php require "conn.php";
+header('Content-Type: text/html; charset=utf-8');
 session_start();
 
 $email = $_POST["email"];
@@ -8,6 +9,7 @@ $conexao = conectar();
 $sql = "SELECT * FROM Usuario WHERE email='" . $email . "' AND senha='" . $password . "';";
 $resultado = executar_sql($conexao, $sql);
 $arrayResultado = lerResultado($resultado);
+desconectar($conexao);
 
 if(sizeof($arrayResultado) > 0){
     $_SESSION['email'] = $email;

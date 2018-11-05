@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS Usuario (
 	username VARCHAR(64) NOT NULL,
 	senha VARCHAR(64) NOT NULL,
 	nickname VARCHAR(64) NOT NULL,
-	frase VARCHAR(128) DEFAULT "Ol·! Estou usando o MSMEME.",
+	frase VARCHAR(128) DEFAULT "Ol√°! Estou usando o MSMEME.",
 	status INT NOT NULL,
 	PRIMARY KEY(email)
 );
@@ -29,3 +29,11 @@ CREATE TABLE IF NOT EXISTS Mensagem (
 	FOREIGN KEY(emailEnvio) REFERENCES Usuario(email),
 	FOREIGN KEY(emailRecebimento) REFERENCES Usuario(email)
 );
+
+CREATE TABLE IF NOT EXISTS PedidoAmizade (
+	emailEnvio VARCHAR(128) NOT NULL,
+	emailRecebimento VARCHAR(128) NOT NULL,
+	PRIMARY KEY(emailEnvio,emailRecebimento),
+	FOREIGN KEY(emailEnvio) REFERENCES Usuario(email),
+	FOREIGN KEY(emailRecebimento) REFERENCES Usuario(email)
+)

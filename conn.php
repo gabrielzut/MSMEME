@@ -16,6 +16,7 @@ function conectar(){
 	if(!$conexao_base)
 		die('Erro: ' . mysql_error ());
 
+	mysqli_query($conexao_sgbd,"SET NAMES 'utf8'");
 	return $conexao_sgbd;
 }
 
@@ -32,7 +33,7 @@ function executar_SQL($conexao, $SQL){
 }
 
 function lerResultado($resultado){
-	$arrayResultado;
+	$arrayResultado = [];
 	for($i=0;$i<mysqli_num_rows($resultado);$i++){
 		$arrayResultado[$i] = mysqli_fetch_assoc($resultado);
 	}

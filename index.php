@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" type="text/CSS" href="estilo.css">
   <title>Bem vindo ao MSMEME!</title>
+  <?php header('Content-Type: text/html; charset=utf-8');?>
 </head>
 
 <body class="login">
