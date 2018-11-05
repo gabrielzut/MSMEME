@@ -42,12 +42,6 @@
                     <a class="nav-link" href="sair.php">Sair</a>
                 </li>
             </ul>
-            <ul class="navbar-nav ml-auto">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisa..." aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pesquisar</button>
-                </form>
-            </ul>
         </div>
     </nav>
     <div class="container-fluid">

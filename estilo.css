@@ -19,12 +19,12 @@ p {
 
 .lista {
   height: 47vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .listaConversa {
   height: 65vh;
-  overflow: scroll;
+  overflow-y: scroll;
 }
 
 .imgperfil:hover{
