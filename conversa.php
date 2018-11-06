@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="pagina100">
 
 <head>
     <!-- Required meta tags -->
@@ -15,14 +15,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
-    <script type="text/javascript" src="js.js"></script>
-
 
     <title>MSMEME</title>
     <?php header('Content-Type: text/html; charset=utf-8');?>
 </head>
 
-<body class="bg-light">
+<body class="bg-light pagina100">
     <?php
     session_start();
     if(!(isset($_SESSION['email']) && isset($_SESSION['password']))){
@@ -52,53 +50,72 @@
         </div>
     </nav>
     <div class="container-fluid">
-        <div class="row h-100">
-            <div class="col-md-2 bg-light border border-dark text-center y-3">
-                <div class="row">
-                    <div class="col-4 col-md-12 conversas">
-                        <div class="contatos py-2">
-                            <img src="perfil.png" class="img-fluid rounded border border-success status rounded" width="100px">
-                            <h4 class="mt-2">Nickname</h4>
-                            <a href="">Ver contato</a>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="col-4 col-md-12 conversas">
-                        <div class="contatos py-2">
-                            <img src="perfil.png" class="img-fluid rounded border border-danger status rounded" width="100px">
-                            <h4 class="mt-2">Nickname</h4>
-                            <a href="">Ver contato</a>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="col-4 col-md-12 conversas">
-                        <div class="contatos py-2">
-                            <img src="novaConversa.png" class="img-fluid rounded border border-primary status rounded"
-                                width="100px">
-                            <h4 class="mt-2">Nova conversa</h4>
-                            <br>
-                        </div>
-                        <hr>
-                    </div>
+        <div class="row">
+            <div class="col-md-2 bg-light text-center contatoConversa">
+                <div class="contatos py-4">
+                    <img src="perfil.png" class="img-fluid rounded border border-success status rounded" width="100px">
+                    <h4 class="mt-2">Nickname</h4>
+                    <a href="">Ver contato</a>
                 </div>
+                <hr>
             </div>
-            <div class="col-md-10 p-3 col-xs-12 bg-white mensagens">
-                <div class="row">
-                    <div class="col mb-3">
-                        <p><b>Você</b> diz:</p>
-                        <p class="ml-3">eae vei blz kkk</p>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <p><b>Lorem Ipsum</b> diz:</p>
-                        <p class="ml-3">blz man e ae como ta a kebrada</p>
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <div class="col">
-                        <p><b>Você</b> diz:</p>
-                        <p class="ml-3"><img src="meme.png" width="200px"></img></p>
+            <div class="col-md-10 col-xs-12 bg-white mensagens">
+                <div class="container-fluid">
+                    <div class="listaMensagens">
+                        <div class="row">
+                            <div class="col mb-3">
+                                <p><b>Você</b> diz:</p>
+                                <p class="ml-3">eae vei blz kkk</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <p><b>Lorem Ipsum</b> diz:</p>
+                                <p class="ml-3">blz man e ae como ta a kebrada</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <p><b>Você</b> diz:</p>
+                                <p class="ml-3"><img src="meme.png" width="200px"></img></p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <p><b>Você</b> diz:</p>
+                                <p class="ml-3">eae vei blz kkk</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <p><b>Lorem Ipsum</b> diz:</p>
+                                <p class="ml-3">blz man e ae como ta a kebrada</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col mb-3">
+                                <p><b>Você</b> diz:</p>
+                                <p class="ml-3">eae vei blz kkk</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <p><b>Lorem Ipsum</b> diz:</p>
+                                <p class="ml-3">blz man e ae como ta a kebrada</p>
+                            </div>
+                        </div>
+                                        <div class="row">
+                            <div class="col mb-3">
+                                <p><b>Você</b> diz:</p>
+                                <p class="ml-3">eae vei blz kkk</p>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <p><b>Lorem Ipsum</b> diz:</p>
+                                <p class="ml-3">blz man e ae como ta a kebrada</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="row campoMensagem">
@@ -142,8 +159,7 @@
 </body>
 <script>
     $("#txArea").emojioneArea({
-        pickerPosition:"bottom"
+        pickerPosition:"top"
     });
 </script>
-
 </html>

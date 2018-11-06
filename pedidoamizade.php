@@ -8,12 +8,15 @@ if(!(isset($_SESSION['email']) && isset($_SESSION['password']))){
 
 $emailpedido = $_POST["emailpedido"];
 $conexao = conectar();
-$sql = "SELECT * FROM pedidoamizade WHERE (emailenvio='" . $_SESSION['email'] . "' AND emailrecebimento='" . $emailpedido . "') OR (emailenvio='" . $emailpedido . "' AND emailrecebimento='" . $_SESSION['email'] . "');";
+$sql = "SELECT * FROM amizades WHERE (emailUsuario1='" . $_SESSION['email'] . "' AND emailUsuario2='" . $emailpedido . "') OR (emailUsuario1='" . $emailpedido . "' AND emailUsuario2='" . $_SESSION['email'] . "');";
 $resultado = executar_sql($conexao, $sql);
 $arrayResultado = lerResultado($resultado);
 
-$sql = "INSERT INTO Usuario (email,username,senha,nickname,status) VALUES ('" . $email . "','" . $username . "','" . $password . "','" . $username . "',0);";
-$resultado = executar_sql($conexao, $sql);
-
-header('Location:index.php?msg=sucesso');
+if(count($arrayResultado) == 0){
+    $sql = "INSERT INTO amizades (emailUsuario1,emailUsuario2,pedido) VALUES ('" . $_SESSION['email'] . "','" . $emailpedido . "',1);";
+    $resultado = executar_sql($conexao, $sql);
+    header('Location:contatos.php?msg=envio');
+}else{
+    header('Location:contatos.php?msg=erro');
+}
 ?>

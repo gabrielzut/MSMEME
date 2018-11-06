@@ -11,6 +11,9 @@
         crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/CSS" href="estilo.css">
+
+    <script src="jquery-3.3.1.min.js"></script>
+
     <title>MSMEME</title>
     <?php header('Content-Type: text/html; charset=utf-8');?>
 </head>
@@ -58,20 +61,20 @@
         <div class="row mt-5">
             <h3>Alterar informações de usuário</h3>
         </div>
-        <form method="POST" action="alterarUsuario">
+        <form method="POST" action="alterarUsuario.php">
             <div class="row">
                 <div class="col-md-8 col-xs-12">
                     <div class="form-group">
                         <label for="nickname" class="col-form-label">Apelido:</label>
-                        <input type="text" class="form-control" id="nickname" placeholder="Apelido" value="<?php echo $_SESSION['nickname'];?>">
+                        <input type="text" class="form-control" id="nickname" placeholder="Apelido" name="nickname" value="<?php echo $_SESSION['nickname'];?>">
                     </div>
                     <div class="form-group">
                         <label for="frase" class="col-form-label">Status:</label>
-                        <input type="text" class="form-control" id="frase" placeholder="Frase" value="<?php echo $_SESSION['frase'];?>">
+                        <input type="text" class="form-control" id="frase" placeholder="Frase" name="frase" value="<?php echo $_SESSION['frase'];?>">
                     </div>
                 </div>
                 <div class="col-md-2 col-xs-12 aligncentro">
-                    <button type="button" class="btn btn-success btn-lg btn-block">Enviar</button>
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Enviar</button>
                 </div>
             </div>
         </form>
@@ -79,24 +82,24 @@
         <div class="row mt-5">
             <h3>Alterar senha</h3>
         </div>
-        <form>
-            <div class="row">
+        <form method="POST" action="alterarSenha.php">
+            <div class="row mb-5">
                 <div class="col-md-8 col-xs-12">
                     <div class="form-group">
                         <label for="antiga" class="col-form-label">Senha antiga:</label>
-                        <input type="password" class="form-control" id="antiga" placeholder="Senha antiga">
+                        <input type="password" class="form-control" id="antiga" name="antiga" placeholder="Senha antiga">
                     </div>
                     <div class="form-group">
                         <label for="nova" class="col-form-label">Nova senha:</label>
-                        <input type="password" class="form-control" id="nova" placeholder="Nova senha">
+                        <input type="password" class="form-control" id="nova" name="nova" placeholder="Nova senha">
                     </div>
                     <div class="form-group">
                         <label for="novaconfirmar" class="col-form-label">Confirmar nova senha:</label>
-                        <input type="password" class="form-control" id="novaconfirmar" placeholder="Confirmar nova senha">
+                        <input type="password" class="form-control" id="novaconfirmar" name="confirmar" placeholder="Confirmar nova senha">
                     </div>
                 </div>
                 <div class="col-md-2 col-xs-12 aligncentro">
-                    <button type="button" class="btn btn-success btn-lg btn-block">Enviar</button>
+                    <button type="submit" class="btn btn-success btn-lg btn-block">Enviar</button>
                 </div>
             </div>
         </form>

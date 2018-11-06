@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" style="height: 100%">
+<html lang="en" class="pagina100">
 
 <head>
     <!-- Required meta tags -->
@@ -11,11 +11,21 @@
         crossorigin="anonymous">
 
     <link rel="stylesheet" type="text/CSS" href="estilo.css">
+
+    <script src="jquery-3.3.1.min.js"></script>
+
+    <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#modalErro').modal('show');
+            $('#modalEnvio').modal('show');
+        });
+    </script>
+
     <title>MSMEME</title>
     <?php header('Content-Type: text/html; charset=utf-8');?>
 </head>
 
-<body class="bg-light mh-100">
+<body class="bg-light pagina100">
     <?php
     session_start();
     if(!(isset($_SESSION['email']) && isset($_SESSION['password']))){
@@ -50,7 +60,7 @@
             </ul>
         </div>
     </nav>
-    <div class="container-fluid py-5 px-5 bg-dark text-white">
+    <div class="container-fluid py-4 bg-dark text-white">
         <div class="container text-center text-md-left">
             <div class="row">
                 <div class="col-md-2 col-xs-12">
@@ -61,14 +71,84 @@
                     <h5><?php echo $_SESSION['frase'];?></h5>
                 </div>
             </div>
-        </div>
-        <div class="text-right">
-            
+            <div class="text-center text-md-right">
+                <button type="button" class="btn btn-success mr-2 mb-2" data-toggle="modal" data-target="#modalAdicionar">
+                    Adicionar amigo
+                </button>
+                <button type="button" class="btn btn-success mb-2">
+                    Pedidos de amizade <span class="badge badge-light" data-toggle="modal" data-target="#modalPedidos">0</span>
+                </button>
+            </div>
         </div>
     </div>
-    <div class="lista mh-100">
-        <div class="container-fluid pt-1 px-5 bg-light mh-100">
-            <div class="container text-center text-md-left mh-100">
+    <div class="lista">
+        <div class="container-fluid pt-1 px-5 bg-light">
+            <div class="container text-center text-md-left">
+                <div class="row contatos">
+                    <div class="col-md-1 col-xs-12">
+                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
+                    </div>
+                    <div class="col-md-11 col-xs-12">
+                        <h4 class="mt-2">Nickname</h4>
+                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
+                            a força" - Meu amigo robso</h6>
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row contatos">
+                    <div class="col-md-1 col-xs-12">
+                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
+                    </div>
+                    <div class="col-md-11 col-xs-12">
+                        <h4 class="mt-2">Nickname</h4>
+                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
+                            a força" - Meu amigo robso</h6>
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row contatos">
+                    <div class="col-md-1 col-xs-12">
+                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
+                    </div>
+                    <div class="col-md-11 col-xs-12">
+                        <h4 class="mt-2">Nickname</h4>
+                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
+                            a força" - Meu amigo robso</h6>
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row contatos">
+                    <div class="col-md-1 col-xs-12">
+                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
+                    </div>
+                    <div class="col-md-11 col-xs-12">
+                        <h4 class="mt-2">Nickname</h4>
+                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
+                            a força" - Meu amigo robso</h6>
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
+                </div>
+                <div class="row contatos">
+                    <div class="col-md-1 col-xs-12">
+                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
+                    </div>
+                    <div class="col-md-11 col-xs-12">
+                        <h4 class="mt-2">Nickname</h4>
+                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
+                            a força" - Meu amigo robso</h6>
+                    </div>
+                    <div class="col-12">
+                        <hr>
+                    </div>
+                </div>
                 <div class="row contatos">
                     <div class="col-md-1 col-xs-12">
                         <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
@@ -157,6 +237,65 @@
             </span>
         </div>
     </footer>
+    <form action="pedidoAmizade.php" method="POST">
+        <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="modalAdicionar" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Adicionar amigo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="username" class="col-form-label">Email:</label>
+                            <input type="emailpedido" class="form-control" id="emailpedido" placeholder="Email do amigo a adicionar" name="emailpedido">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="modal fade" id="<?php 
+        if(isset($_GET['msg'])){
+          if($_GET['msg'] == "erro"){
+            echo "modalErro";
+          }
+          if($_GET['msg'] == "envio"){
+            echo "modalEnvio";
+          }
+        }else{
+            echo "modalSemErro";
+        }
+    ?>" tabindex="-1" role="dialog" aria-labelledby="modalErro" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Aviso</h5>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <?php
+                                if(isset($_GET['msg'])){
+                                    if($_GET['msg'] == "erro"){
+                                        echo "Não foi possível adicionar amigo! Vocês já são amigos ou já existe um pedido de amizade pendente.";
+                                    }
+                                    if($_GET['msg'] == "envio"){
+                                        echo "Pedido de amizade enviado!";
+                                    }
+                                }
+                            ?>
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">OK</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"

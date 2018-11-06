@@ -8,9 +8,14 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
   height: 100%; 
   display: grid;
+}
+
+.pagina100{
+  min-height: 100vh;
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 p {
@@ -18,12 +23,7 @@ p {
 }
 
 .lista {
-  height: 47vh;
-  overflow-y: scroll;
-}
-
-.listaConversa {
-  height: 65vh;
+  height: calc(100% - 60px);
   overflow-y: scroll;
 }
 
@@ -34,6 +34,10 @@ p {
 .aligncentro{
   display: flex;
   align-items: center;
+}
+
+.contatoConversa{
+  height: calc(100vh - 60px);
 }
 
 .contatos:hover{
@@ -52,11 +56,17 @@ textarea{
 .campoMensagem{
   position: absolute;
   width: 100%;
-  bottom: 0px;
+  bottom: auto;
 }
 
 .conversas{
   margin: auto;
+}
+
+.listaMensagens{
+  height: calc(100vh - 300px);
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 footer {

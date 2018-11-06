@@ -14,6 +14,7 @@ CREATE TABLE IF NOT EXISTS Usuario (
 CREATE TABLE IF NOT EXISTS Amizades (
 	emailUsuario1 VARCHAR(128) NOT NULL,
 	emailUsuario2 VARCHAR(128) NOT NULL,
+	pedido TINYINT(1) NOT NULL DEFAULT 1,
 	PRIMARY KEY(emailUsuario1,emailUsuario2),
 	FOREIGN KEY(emailUsuario1) REFERENCES Usuario(email),
 	FOREIGN KEY(emailUsuario2) REFERENCES Usuario(email)
@@ -29,11 +30,3 @@ CREATE TABLE IF NOT EXISTS Mensagem (
 	FOREIGN KEY(emailEnvio) REFERENCES Usuario(email),
 	FOREIGN KEY(emailRecebimento) REFERENCES Usuario(email)
 );
-
-CREATE TABLE IF NOT EXISTS PedidoAmizade (
-	emailEnvio VARCHAR(128) NOT NULL,
-	emailRecebimento VARCHAR(128) NOT NULL,
-	PRIMARY KEY(emailEnvio,emailRecebimento),
-	FOREIGN KEY(emailEnvio) REFERENCES Usuario(email),
-	FOREIGN KEY(emailRecebimento) REFERENCES Usuario(email)
-)
