@@ -10,11 +10,11 @@ define('BD_BASEDEDADOS', 'msmeme');
 function conectar(){
 	$conexao_sgbd = mysqli_connect(S_SERVIDOR, BD_USUARIO, BD_SENHA);
 	if(!$conexao_sgbd)
-		die('Erro: ' . mysql_error ());
+		die('Erro: ' . mysqli_error ($conexao_sgbd));
 
 	$conexao_base = mysqli_select_db($conexao_sgbd, BD_BASEDEDADOS);
 	if(!$conexao_base)
-		die('Erro: ' . mysql_error ());
+		die('Erro: ' . mysqli_error ($conexao_sgbd));
 
 	mysqli_query($conexao_sgbd,"SET NAMES 'utf8'");
 	return $conexao_sgbd;
@@ -28,7 +28,7 @@ function executar_SQL($conexao, $SQL){
 	$conexao = conectar();
 	$resultado = mysqli_query($conexao, $SQL);
 	if(!$resultado)
-		die('Erro: ' . mysql_error());
+		die('Erro: ' . mysqli_error($conexao));
 	return $resultado;
 }
 

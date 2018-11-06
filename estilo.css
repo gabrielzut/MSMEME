@@ -8,9 +8,13 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
   height: 100%; 
   display: grid;
+}
+
+.paginacontatos{
+  min-height: 100vh;
+  height: 100vh;
 }
 
 p {
@@ -18,7 +22,7 @@ p {
 }
 
 .lista {
-  height: 47vh;
+  height: calc(100% - 60px);
   overflow-y: scroll;
 }
 
