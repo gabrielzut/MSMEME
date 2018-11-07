@@ -18,6 +18,7 @@ if(sizeof($arrayResultado) > 0){
     $_SESSION['nickname'] = $arrayResultado[0]['nickname'];
     $_SESSION['frase'] = $arrayResultado[0]['frase'];
     $_SESSION['status'] = $arrayResultado[0]['status'];
+    $_SESSION['imagem'] = $arrayResultado[0]['imagem'];
     header('location:contatos.php');
 }else{
     session_destroy();

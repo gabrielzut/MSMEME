@@ -8,6 +8,7 @@ CREATE TABLE IF NOT EXISTS Usuario (
 	nickname VARCHAR(64) NOT NULL,
 	frase VARCHAR(128) DEFAULT "Olá! Estou usando o MSMEME.",
 	status INT NOT NULL,
+	imagem VARCHAR(128) NOT NULL DEFAULT "padrao.png",
 	PRIMARY KEY(email)
 );
 

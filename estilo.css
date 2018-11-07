@@ -99,3 +99,9 @@ footer {
 .login button{
   height: auto;
 }
+
+#imagem{
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}

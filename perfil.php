@@ -16,6 +16,15 @@
 
     <title>MSMEME</title>
     <?php header('Content-Type: text/html; charset=utf-8');?>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#formImagem').on('change', "input#imagem", function (e) {
+                e.preventDefault();
+                $("#formImagem").submit();
+            });
+        });
+    </script>
 </head>
 
 <body class="bg-light">
@@ -50,7 +59,13 @@
     <div class="container p-5">
         <div class="row mb-5 text-center text-md-left">
             <div class="col-md-2 col-xs-12">
-                <p class="mt-1"><img src="perfil.png" class="rounded border border-success status rounded imgperfil" width="100px"></p>
+                <form id="formImagem" action="alterarImagem.php" method="POST" enctype="multipart/form-data">
+                    <label for="imagem">
+                        <p class="mt-1"><img src="<?php echo "./img/" . $_SESSION['imagem']?>" class="rounded border border-success status rounded imgperfil bg-white" width="100px" height="100px"></p>
+                    </label>
+
+                    <input id="imagem" name="imagem" type="file">
+                </form>
             </div>
             <div class="col-md-10 col-xs-12">
                 <h1><?php echo $_SESSION['nickname'];?></h1>
