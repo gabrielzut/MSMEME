@@ -17,14 +17,7 @@
     <title>MSMEME</title>
     <?php header('Content-Type: text/html; charset=utf-8');?>
 
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('#formImagem').on('change', "input#imagem", function (e) {
-                e.preventDefault();
-                $("#formImagem").submit();
-            });
-        });
-    </script>
+    <script src="uploadImagem.js"></script>
 </head>
 
 <body class="bg-light">

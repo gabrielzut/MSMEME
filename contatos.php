@@ -14,21 +14,14 @@
 
     <script src="jquery-3.3.1.min.js"></script>
 
-    <script type="text/javascript">
-        $(window).on('load',function(){
-            $('#modalErro').modal('show');
-            $('#modalEnvio').modal('show');
-        });
-        $(document).ready(function(){
-            $('#formImagem').on('change', "input#imagem", function (e) {
-                e.preventDefault();
-                $("#formImagem").submit();
-            });
-        });
-    </script>
+    <script src="msgContatos.js"></script>
+    <script src="uploadImagem.js"></script>
 
     <title>MSMEME</title>
-    <?php header('Content-Type: text/html; charset=utf-8');?>
+    <?php header('Content-Type: text/html; charset=utf-8');
+        require "getPedidos.php";
+        require "getAmigos.php";
+    ?>
 </head>
 
 <body class="bg-light pagina100">
@@ -66,189 +59,71 @@
             </ul>
         </div>
     </nav>
-    <div class="container-fluid py-4 bg-dark text-white">
-        <div class="container text-center text-md-left">
-            <div class="row">
-                <div class="col-md-2 col-xs-12">
-                    <form id="formImagem" action="alterarImagem.php" method="POST" enctype="multipart/form-data">
-                        <label for="imagem">
-                            <p class="mt-1"><img src="<?php echo "./img/" . $_SESSION['imagem']?>" class="rounded border border-success status rounded imgperfil bg-white" width="100px" height="100px"></p>
-                        </label>
-
-                        <input id="imagem" name="imagem" type="file">
-                    </form>
-                </div>
-                <div class="col-md-10 col-xs-12">
-                    <h1><?php echo $_SESSION['nickname'];?></h1>
-                    <h5><?php echo $_SESSION['frase'];?></h5>
-                </div>
-            </div>
-            <div class="text-center text-md-right">
-                <button type="button" class="btn btn-success mr-2 mb-2" data-toggle="modal" data-target="#modalAdicionar">
-                    Adicionar amigo
-                </button>
-                <button type="button" class="btn btn-success mb-2">
-                    Pedidos de amizade <span class="badge badge-light" data-toggle="modal" data-target="#modalPedidos">0</span>
-                </button>
-            </div>
-        </div>
-    </div>
-    <div class="lista">
-        <div class="container-fluid pt-1 px-5 bg-light">
+    <div class="paginaContatos">
+        <div class="container-fluid py-4 bg-dark text-white">
             <div class="container text-center text-md-left">
-                <div class="row contatos">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
+                <div class="row">
+                    <div class="col-md-2 col-xs-12">
+                        <form id="formImagem" action="alterarImagem.php" method="POST" enctype="multipart/form-data">
+                            <label for="imagem">
+                                <p class="mt-1"><img src="<?php echo "./img/" . $_SESSION['imagem']?>" class="rounded border border-success status rounded imgperfil bg-white" width="100px" height="100px"></p>
+                            </label>
+
+                            <input id="imagem" name="imagem" type="file">
+                        </form>
                     </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row contatos">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                    <div class="col-12">
-                        <hr>
+                    <div class="col-md-10 col-xs-12">
+                        <h1><?php echo $_SESSION['nickname'];?></h1>
+                        <h5><?php echo $_SESSION['frase'];?></h5>
                     </div>
                 </div>
-                <div class="row contatos">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row contatos">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row contatos">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row contatos">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row contatos">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row contatos">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row contatos">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row contatos">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
-                </div>
-                <div class="row contatos">
-                    <div class="col-md-1 col-xs-12">
-                        <p><img src="perfil.png" class="rounded border border-success status rounded mt-3" width="40px"></p>
-                    </div>
-                    <div class="col-md-11 col-xs-12">
-                        <h4 class="mt-2">Nickname</h4>
-                        <h6>"Cavalo dado até a água mole avisa amigo é desconfia olha os olho por olho dente por espeto faz
-                            a força" - Meu amigo robso</h6>
-                    </div>
-                    <div class="col-12">
-                        <hr>
-                    </div>
+                <div class="text-center text-md-right">
+                    <button type="button" class="btn btn-success mr-2 mb-2" data-toggle="modal" data-target="#modalAdicionar">
+                        Adicionar amigo
+                    </button>
+                    <a href="pedidos.php"><button type="button" class="btn btn-success mb-2">
+                        Pedidos de amizade <span class="badge badge-danger" data-toggle="modal" data-target="#modalPedidos"><?php echo count(getPedidos())?></span>
+                    </button></a>
                 </div>
             </div>
         </div>
-    </div>
-    <footer class="bg-dark">
-        <div class="container">
-            <span class="text-white">
-                Teste.
-            </span>
+        <div class="lista">
+            <div class="container-fluid pt-1 px-5 bg-light">
+                <div class="container text-center text-md-left">
+                    <?php 
+                    $amigos = getAmigos();
+                    $numAmigos = count($amigos);
+
+                    if($numAmigos == 0){
+                        echo "<h4>Você ainda não tem amigos adicionados!</h4>";
+                    }
+                    for($i=0;$i<$numAmigos;$i++){
+                        echo "
+                            <div class='row contatos'>
+                                <div class='col-md-1 col-xs-12'>
+                                    <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border border-success status rounded mt-3' width='40px' height='40px'></p>
+                                </div>
+                                <div class='col-md-11 col-xs-12'>
+                                    <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
+                                    <h6>" . $amigos[$i]['frase'] . "</h6>
+                                </div>
+                                <div class='col-12'>
+                                    <hr>
+                                </div>
+                            </div>
+                        ";
+                    }?>
+                </div>
+            </div>
         </div>
-    </footer>
+        <footer class="bg-dark">
+            <div class="container">
+                <span class="text-white">
+                    Teste.
+                </span>
+            </div>
+        </footer>
+    </div>
     <form action="pedidoAmizade.php" method="POST">
         <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="modalAdicionar" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">

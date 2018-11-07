@@ -15,7 +15,8 @@ body {
 .pagina100{
   min-height: 100vh;
   height: 100vh;
-  overflow-y: hidden;
+  overflow: hidden;
+  position: relative;
 }
 
 p {
@@ -23,8 +24,26 @@ p {
 }
 
 .lista {
-  height: calc(100% - 60px);
+  height: calc(100vh - 343px);
   overflow-y: scroll;
+}
+
+@media only screen and (max-width: 768px) {
+  .lista {
+    height: calc(100% - 371px);
+    overflow-y: scroll;
+  }
+}
+
+@media only screen and (max-width: 407px) {
+  .lista {
+    height: calc(100% - 417px);
+    overflow-y: scroll;
+  }
+}
+
+.paginaContatos {
+  height: calc(100vh - 61px);
 }
 
 .imgperfil:hover{
@@ -104,4 +123,8 @@ footer {
   visibility: hidden;
   width: 0;
   height: 0;
+}
+
+.pagina100 footer {
+  position: relative;
 }
