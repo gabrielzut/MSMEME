@@ -111,6 +111,54 @@
                                     <hr>
                                 </div>
                             </div>
+                            <div class='row contatos'>
+                                <div class='col-md-1 col-xs-12'>
+                                    <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border border-success status rounded mt-3' width='40px' height='40px'></p>
+                                </div>
+                                <div class='col-md-11 col-xs-12'>
+                                    <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
+                                    <h6>" . $amigos[$i]['frase'] . "</h6>
+                                </div>
+                                <div class='col-12'>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class='row contatos'>
+                                <div class='col-md-1 col-xs-12'>
+                                    <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border border-success status rounded mt-3' width='40px' height='40px'></p>
+                                </div>
+                                <div class='col-md-11 col-xs-12'>
+                                    <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
+                                    <h6>" . $amigos[$i]['frase'] . "</h6>
+                                </div>
+                                <div class='col-12'>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class='row contatos'>
+                                <div class='col-md-1 col-xs-12'>
+                                    <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border border-success status rounded mt-3' width='40px' height='40px'></p>
+                                </div>
+                                <div class='col-md-11 col-xs-12'>
+                                    <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
+                                    <h6>" . $amigos[$i]['frase'] . "</h6>
+                                </div>
+                                <div class='col-12'>
+                                    <hr>
+                                </div>
+                            </div>
+                            <div class='row contatos'>
+                                <div class='col-md-1 col-xs-12'>
+                                    <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border border-success status rounded mt-3' width='40px' height='40px'></p>
+                                </div>
+                                <div class='col-md-11 col-xs-12'>
+                                    <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
+                                    <h6>" . $amigos[$i]['frase'] . "</h6>
+                                </div>
+                                <div class='col-12'>
+                                    <hr>
+                                </div>
+                            </div>
                         ";
                     }?>
                 </div>

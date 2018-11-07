@@ -13,7 +13,6 @@ body {
 }
 
 .pagina100{
-  min-height: 100vh;
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -32,6 +31,17 @@ p {
   .lista {
     height: calc(100% - 371px);
     overflow-y: scroll;
+  }
+}
+
+@media only screen and (max-height: 600px) {
+  .pagina100 {
+    overflow-y: auto;
+    height: auto;
+  }
+
+  .lista {
+    height: auto;
   }
 }
 
