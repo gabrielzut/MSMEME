@@ -85,6 +85,30 @@
             <a href="contatos.php"><button class="btn btn-success my-3">Voltar</button></a>
         </div>
     </div>
+
+    <form action="pedidoAmizade.php" method="POST">
+        <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="modalAdicionar" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">Adicionar amigo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="username" class="col-form-label">Email:</label>
+                            <input type="emailpedido" class="form-control" id="emailpedido" placeholder="Email do amigo a adicionar" name="emailpedido">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                        <button type="submit" class="btn btn-success">Enviar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+
     <footer class="bg-dark">
         <div class="container">
             <span class="text-white">

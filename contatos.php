@@ -14,8 +14,8 @@
 
     <script src="jquery-3.3.1.min.js"></script>
 
-    <script src="msgContatos.js"></script>
-    <script src="uploadImagem.js"></script>
+    <script src="js/msgContatos.js"></script>
+    <script src="js/uploadImagem.js"></script>
 
     <title>MSMEME</title>
     <?php header('Content-Type: text/html; charset=utf-8');
@@ -202,6 +202,9 @@
           if($_GET['msg'] == "envio"){
             echo "modalEnvio";
           }
+          if($_GET['msg'] == "inexistente"){
+            echo "modalInexistente";
+          }
         }else{
             echo "modalSemErro";
         }
@@ -220,6 +223,9 @@
                                     }
                                     if($_GET['msg'] == "envio"){
                                         echo "Pedido de amizade enviado!";
+                                    }
+                                    if($_GET['msg'] == "inexistente"){
+                                        echo "Não foi possível adicionar amigo! Esse usuário não existe!";
                                     }
                                 }
                             ?>
