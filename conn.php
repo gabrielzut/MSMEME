@@ -16,7 +16,9 @@ function conectar(){
 	if(!$conexao_base)
 		die('Erro: ' . mysqli_error ($conexao_sgbd));
 
-	mysqli_query($conexao_sgbd,"SET NAMES 'utf8'");
+	mysqli_set_charset($conexao_sgbd,"utf8mb4");
+	mysqli_query($conexao_sgbd,"SET NAMES 'utf8mb4'");
+	
 	return $conexao_sgbd;
 }
 

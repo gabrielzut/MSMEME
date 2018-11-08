@@ -12,26 +12,41 @@
 
     <link rel="stylesheet" type="text/CSS" href="estilo.css">
     
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
 
+    <script src="js/atualizaConversa.js"></script>
+
     <title>MSMEME</title>
     <?php header('Content-Type: text/html; charset=utf-8');?>
+
+    <?php require "conn.php";
+        session_start();
+        if(!(isset($_SESSION['email']) && isset($_SESSION['password']))){
+            header('location:index.php?msg=erro');
+            exit;
+        }
+        if(!(isset($_POST['emailConversa']))){
+            header('location:contatos.php');
+            exit;
+        }
+        if(isset($_POST['envio'])){
+            header('Content-Type: text/html; charset=utf-8');
+
+            $emailRecebimento = $_POST["emailConversa"];
+            $conteudo = $_POST["conteudo"];
+
+            $conexao = conectar();
+            $sql = "INSERT INTO mensagem (emailEnvio, emailRecebimento, conteudoMensagem) VALUES ('" . $_SESSION['email'] . "','" . $emailRecebimento . "','" . $conteudo . "');";
+            $resultado = executar_sql($conexao, $sql);
+        }
+    ?>
 </head>
 
 <body class="bg-light pagina100">
     <?php
-    session_start();
-    if(!(isset($_SESSION['email']) && isset($_SESSION['password']))){
-        header('location:index.php?msg=erro');
-        exit;
-    }
-    if(!(isset($_POST['emailConversa']))){
-        header('location:contatos.php');
-        exit;
-    }
-    echo "<div style='display:none;' id='emailConversa'>" . $_POST['emailConversa'] . "</div>";
+        echo "<div style='display:none;' id='emailConversa'>" . $_POST['emailConversa'] . "</div>";
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-success">
         <a class="navbar-brand" href="contatos.php">
@@ -58,95 +73,40 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-2 bg-light text-center contatoConversa">
-                <div class="contatos py-4">
-                    <img src="perfil.png" class="img-fluid rounded border border-success status rounded" width="100px">
-                    <h4 class="mt-2">Nickname</h4>
-                    <a href="">Ver contato</a>
+                <div class="contatos py-4" id="contato">
+                    
                 </div>
                 <hr>
             </div>
             <div class="col-md-10 col-xs-12 bg-white mensagens">
                 <div class="container-fluid">
-                    <div class="listaMensagens">
-                        <div class="row mb-3">
-                            <div class="col">
-                                <p><b>Você</b> diz:</p>
-                                <p class="ml-3">eae vei blz kkk</p>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <p><b>Lorem Ipsum</b> diz:</p>
-                                <p class="ml-3">blz man e ae como ta a kebrada</p>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <p><b>Você</b> diz:</p>
-                                <p class="ml-3"><img src="meme.png" width="200px"></img></p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col mb-3">
-                                <p><b>Você</b> diz:</p>
-                                <p class="ml-3">eae vei blz kkk</p>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <p><b>Lorem Ipsum</b> diz:</p>
-                                <p class="ml-3">blz man e ae como ta a kebrada</p>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col mb-3">
-                                <p><b>Você</b> diz:</p>
-                                <p class="ml-3">eae vei blz kkk</p>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <p><b>Lorem Ipsum</b> diz:</p>
-                                <p class="ml-3">blz man e ae como ta a kebrada</p>
-                            </div>
-                        </div>
-                                        <div class="row">
-                            <div class="col mb-3">
-                                <p><b>Você</b> diz:</p>
-                                <p class="ml-3">eae vei blz kkk</p>
-                            </div>
-                        </div>
-                        <div class="row mb-3">
-                            <div class="col">
-                                <p><b>Lorem Ipsum</b> diz:</p>
-                                <p class="ml-3">blz man e ae como ta a kebrada</p>
-                            </div>
-                        </div>
+                    <div class="listaMensagens" id="mensagens">
                     </div>
                 </div>
-                <div class="row campoMensagem">
-                    <div class="col-12">
-                        <div class="btn-group" role="group">
-                            <button type="button" class="btn"><img src="icons/bold.png" width="32px"></button>
-                            <button type="button" class="btn"><img src="icons/italic.png" width="32px"></button>
-                            <button type="button" class="btn"><img src="icons/under.png" width="32px"></button>
-                            <button type="button" class="btn"><img src="icons/strike.png" width="32px"></button>
-                            <button type="button" class="btn"><img src="icons/emote.png" width="32px"></button>
-                            <button type="button" class="btn"><img src="icons/image.png" width="32px"></button>
+                <form action="conversa.php" method="POST">
+                    <div class="row campoMensagem">
+                        <div class="col-12">
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn"><img src="icons/bold.png" width="32px"></button>
+                                <button type="button" class="btn"><img src="icons/italic.png" width="32px"></button>
+                                <button type="button" class="btn"><img src="icons/under.png" width="32px"></button>
+                                <button type="button" class="btn"><img src="icons/strike.png" width="32px"></button>
+                                <button type="button" class="btn"><img src="icons/emote.png" width="32px"></button>
+                                <button type="button" class="btn"><img src="icons/image.png" width="32px"></button>
+                            </div>
+                        </div>
+                        <input type="hidden" id="emailConversa" name="emailConversa" value="<?php echo $_POST['emailConversa'] ?>">
+                        <div class="col-md-10 col-12">
+                            <textarea id="txArea" name="conteudo" class="form-control my-2" rows="3" ></textarea>
+                        </div>
+                        <div class="col aligncentro">
+                            <button type="submit" name="envio" value="envio" class="btn btn-lg">Enviar</button>
                         </div>
                     </div>
-                    <div class="col-md-10 col-12">
-                        <textarea id="txArea" class="form-control my-2" rows="3" ></textarea>
-                    </div>
-                    <div class="col aligncentro">
-                        <button type="submit" class="btn btn-lg">Enviar</button>
-                    </div>
-                </div>
+                </form>
             </div>
         </div>
     </div>
-
-    
 
     <footer class="footer bg-dark">
         <div class="container">

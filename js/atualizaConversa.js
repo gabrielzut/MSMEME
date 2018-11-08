@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+    emailConversa = $('#emailConversa').text();
+
     getContato();
     getMensagens();
 
@@ -8,15 +10,15 @@ $(document).ready(function () {
         getMensagens();
     }, 5000);
 
-    emailConversa = $('#emailConversa').html();
-
     function getContato() {
         $.ajax({
             url: "getContato.php",
             method: "POST",
-            data: emailConversa,
+            data: {
+                "emailConversa": emailConversa
+            },
             success: function (data) {
-                $('#contatos').html(data);
+                $('#contato').html(data);
             }
         })
     }
@@ -25,9 +27,11 @@ $(document).ready(function () {
         $.ajax({
             url: "getMensagens.php",
             method: "POST",
-            data: emailConversa,
+            data: {
+                "emailConversa": emailConversa
+            },
             success: function (data) {
-                $('#numPedidos').html(data);
+                $('#mensagens').html(data);
             }
         })
     }
