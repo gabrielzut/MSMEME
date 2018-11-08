@@ -16,12 +16,10 @@
 
     <script src="js/msgContatos.js"></script>
     <script src="js/uploadImagem.js"></script>
+    <script src="js/atualizaContatos.js"></script>
 
     <title>MSMEME</title>
-    <?php header('Content-Type: text/html; charset=utf-8');
-        require "getPedidos.php";
-        require "getAmigos.php";
-    ?>
+    <?php header('Content-Type: text/html; charset=utf-8');?>
 </head>
 
 <body class="bg-light pagina100">
@@ -82,86 +80,14 @@
                         Adicionar amigo
                     </button>
                     <a href="pedidos.php"><button type="button" class="btn btn-success mb-2">
-                        Pedidos de amizade <span class="badge badge-danger" data-toggle="modal" data-target="#modalPedidos"><?php echo count(getPedidos())?></span>
+                        Pedidos de amizade <span class="badge badge-danger" data-toggle="modal" data-target="#modalPedidos" id="numPedidos"></span>
                     </button></a>
                 </div>
             </div>
         </div>
         <div class="lista">
             <div class="container-fluid pt-1 px-5 bg-light">
-                <div class="container text-center text-md-left">
-                    <?php 
-                    $amigos = getAmigos();
-                    $numAmigos = count($amigos);
-
-                    if($numAmigos == 0){
-                        echo "<h4>Você ainda não tem amigos adicionados!</h4>";
-                    }
-                    for($i=0;$i<$numAmigos;$i++){
-                        echo "
-                            <div class='row contatos'>
-                                <div class='col-md-1 col-xs-12'>
-                                    <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border border-success status rounded mt-3' width='40px' height='40px'></p>
-                                </div>
-                                <div class='col-md-11 col-xs-12'>
-                                    <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
-                                    <h6>" . $amigos[$i]['frase'] . "</h6>
-                                </div>
-                                <div class='col-12'>
-                                    <hr>
-                                </div>
-                            </div>
-                            <div class='row contatos'>
-                                <div class='col-md-1 col-xs-12'>
-                                    <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border border-success status rounded mt-3' width='40px' height='40px'></p>
-                                </div>
-                                <div class='col-md-11 col-xs-12'>
-                                    <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
-                                    <h6>" . $amigos[$i]['frase'] . "</h6>
-                                </div>
-                                <div class='col-12'>
-                                    <hr>
-                                </div>
-                            </div>
-                            <div class='row contatos'>
-                                <div class='col-md-1 col-xs-12'>
-                                    <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border border-success status rounded mt-3' width='40px' height='40px'></p>
-                                </div>
-                                <div class='col-md-11 col-xs-12'>
-                                    <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
-                                    <h6>" . $amigos[$i]['frase'] . "</h6>
-                                </div>
-                                <div class='col-12'>
-                                    <hr>
-                                </div>
-                            </div>
-                            <div class='row contatos'>
-                                <div class='col-md-1 col-xs-12'>
-                                    <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border border-success status rounded mt-3' width='40px' height='40px'></p>
-                                </div>
-                                <div class='col-md-11 col-xs-12'>
-                                    <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
-                                    <h6>" . $amigos[$i]['frase'] . "</h6>
-                                </div>
-                                <div class='col-12'>
-                                    <hr>
-                                </div>
-                            </div>
-                            <div class='row contatos'>
-                                <div class='col-md-1 col-xs-12'>
-                                    <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border border-success status rounded mt-3' width='40px' height='40px'></p>
-                                </div>
-                                <div class='col-md-11 col-xs-12'>
-                                    <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
-                                    <h6>" . $amigos[$i]['frase'] . "</h6>
-                                </div>
-                                <div class='col-12'>
-                                    <hr>
-                                </div>
-                            </div>
-                        ";
-                    }?>
-                </div>
+                <div class="container text-center text-md-left" id="contatos"></div>
             </div>
         </div>
         <footer class="bg-dark">
@@ -239,8 +165,6 @@
         </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
         crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"

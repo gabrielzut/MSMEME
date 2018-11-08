@@ -24,8 +24,14 @@
     <?php
     session_start();
     if(!(isset($_SESSION['email']) && isset($_SESSION['password']))){
-      header('location:index.php?msg=erro');
+        header('location:index.php?msg=erro');
+        exit;
     }
+    if(!(isset($_POST['emailConversa']))){
+        header('location:contatos.php');
+        exit;
+    }
+    echo "<div style='display:none;' id='emailConversa'>" . $_POST['emailConversa'] . "</div>";
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-success">
         <a class="navbar-brand" href="contatos.php">
@@ -62,8 +68,8 @@
             <div class="col-md-10 col-xs-12 bg-white mensagens">
                 <div class="container-fluid">
                     <div class="listaMensagens">
-                        <div class="row">
-                            <div class="col mb-3">
+                        <div class="row mb-3">
+                            <div class="col">
                                 <p><b>Você</b> diz:</p>
                                 <p class="ml-3">eae vei blz kkk</p>
                             </div>

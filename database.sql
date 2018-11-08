@@ -1,6 +1,10 @@
 CREATE DATABASE IF NOT EXISTS Msmeme;
 USE Msmeme;
 
+DROP TABLE Amizades;
+DROP TABLE Mensagem;
+DROP TABLE Usuario;
+
 CREATE TABLE IF NOT EXISTS Usuario (
 	email VARCHAR(128),
 	username VARCHAR(64) NOT NULL,
@@ -26,8 +30,10 @@ CREATE TABLE IF NOT EXISTS Mensagem (
 	emailEnvio VARCHAR(128) NOT NULL,
 	emailRecebimento VARCHAR(128) NOT NULL,
 	conteudoMensagem TEXT NOT NULL,
-	dataEnvio DATE NOT NULL,
+	dataEnvio DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY(idMensagem),
 	FOREIGN KEY(emailEnvio) REFERENCES Usuario(email),
 	FOREIGN KEY(emailRecebimento) REFERENCES Usuario(email)
 );
+
+SET GLOBAL lc_time_names=pt_BR;
