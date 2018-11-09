@@ -7,7 +7,7 @@
     $emailEnvio = $_POST["emailConversa"];
 
     $conexao = conectar();
-    $sql = "SELECT nickname, status, imagem FROM Usuario WHERE email='" . $emailEnvio . "';";
+    $sql = "SELECT nickname, status, imagem, frase FROM Usuario WHERE email='" . $emailEnvio . "';";
     $resultado = executar_sql($conexao, $sql);
     $arrayResultado = lerResultado($resultado);
     
@@ -20,10 +20,8 @@
         }
         $retorno .= " border-success status rounded' width='100px' height='100px'>
         <h4 class='mt-2'>" . $arrayResultado[0]['nickname'] . "</h4>
-        <a href=''>Ver contato</a>
+        <h6>" . $arrayResultado[0]['frase'] . "</h6>
     ";
 
     echo $retorno;
 ?>
-
-

@@ -58,7 +58,7 @@
         </div>
     </nav>
     <div class="paginaContatos">
-        <div class="container-fluid py-4 bg-dark text-white">
+        <div class="container-fluid py-4 bg-dark text-white headerpessoa">
             <div class="container text-center text-md-left">
                 <div class="row">
                     <div class="col-md-2 col-xs-12">
@@ -70,9 +70,9 @@
                             <input id="imagem" name="imagem" type="file">
                         </form>
                     </div>
-                    <div class="col-md-10 col-xs-12">
+                    <div class="col-md-10 col-xs-12 nickfrase">
                         <h1><?php echo $_SESSION['nickname'];?></h1>
-                        <h5><?php echo $_SESSION['frase'];?></h5>
+                        <h6><?php echo $_SESSION['frase'];?></h6>
                     </div>
                 </div>
                 <div class="text-center text-md-right">

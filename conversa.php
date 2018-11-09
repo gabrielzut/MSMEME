@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="pagina100">
+<html lang="en" class="conversa100">
 
 <head>
     <!-- Required meta tags -->
@@ -44,7 +44,7 @@
     ?>
 </head>
 
-<body class="bg-light pagina100">
+<body class="bg-light conversa100">
     <?php
         echo "<div style='display:none;' id='emailConversa'>" . $_POST['emailConversa'] . "</div>";
     ?>
@@ -70,51 +70,56 @@
             </ul>
         </div>
     </nav>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-2 bg-light text-center contatoConversa">
-                <div class="contatos py-4" id="contato">
-                    
+    <div class="paginaConversa">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2 bg-light text-center contatoConversa">
+                    <div class="contatos py-4" id="contato">
+                        
+                    </div>
+                    <hr>
                 </div>
-                <hr>
-            </div>
-            <div class="col-md-10 col-xs-12 bg-white mensagens">
-                <div class="container-fluid">
-                    <div class="listaMensagens" id="mensagens">
+                <div class="col-md-10 col-xs-12 bg-white mensagens">
+                    <div class="container-fluid">
+                        <div class="listaMensagens" id="mensagens">
+                        </div>
                     </div>
                 </div>
-                <form action="conversa.php" method="POST">
-                    <div class="row campoMensagem">
-                        <div class="col-12">
-                            <div class="btn-group" role="group">
-                                <button type="button" class="btn"><img src="icons/bold.png" width="32px"></button>
-                                <button type="button" class="btn"><img src="icons/italic.png" width="32px"></button>
-                                <button type="button" class="btn"><img src="icons/under.png" width="32px"></button>
-                                <button type="button" class="btn"><img src="icons/strike.png" width="32px"></button>
-                                <button type="button" class="btn"><img src="icons/emote.png" width="32px"></button>
-                                <button type="button" class="btn"><img src="icons/image.png" width="32px"></button>
+            </div>
+            <div class="row mt-3">
+                <div class="col-md-2"></div>
+                <div class="col-md-10">
+                    <form action="conversa.php" method="POST">
+                        <div class="row campoMensagem">
+                            <div class="col-12">
+                                <div class="btn-group" role="group">
+                                    <button type="button" class="btn" id="bold"><img src="icons/bold.png" width="32px"></button>
+                                    <button type="button" class="btn"><img src="icons/italic.png" width="32px"></button>
+                                    <button type="button" class="btn"><img src="icons/under.png" width="32px"></button>
+                                    <button type="button" class="btn"><img src="icons/strike.png" width="32px"></button>
+                                    <button type="button" class="btn"><img src="icons/image.png" width="32px"></button>
+                                </div>
+                            </div>
+                            <input type="hidden" id="emailConversa" name="emailConversa" value="<?php echo $_POST['emailConversa'] ?>">
+                            <div class="col-md-9 col-12">
+                                <textarea id="txArea" name="conteudo" class="form-control my-2" rows="3" ></textarea>
+                            </div>
+                            <div class="col aligncentro">
+                                <button type="submit" name="envio" value="envio" class="btn btn-lg envio">Enviar</button>
                             </div>
                         </div>
-                        <input type="hidden" id="emailConversa" name="emailConversa" value="<?php echo $_POST['emailConversa'] ?>">
-                        <div class="col-md-10 col-12">
-                            <textarea id="txArea" name="conteudo" class="form-control my-2" rows="3" ></textarea>
-                        </div>
-                        <div class="col aligncentro">
-                            <button type="submit" name="envio" value="envio" class="btn btn-lg">Enviar</button>
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
             </div>
         </div>
+        <footer class="bg-dark">
+            <div class="container">
+                <span class="text-white">
+                    Teste.
+                </span>
+            </div>
+        </footer>
     </div>
-
-    <footer class="footer bg-dark">
-        <div class="container">
-            <span class="text-white">
-                Teste.
-            </span>
-        </div>
-    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     

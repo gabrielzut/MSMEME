@@ -5,6 +5,11 @@ $(document).ready(function () {
     getContato();
     getMensagens();
 
+    $('#bold').click(function () {
+        alert(document.getElementById('txArea').selectionStart)
+        //alert($('#txArea').val().substring($('#txArea').selectionStart, $('#txArea').selectionEnd));
+    });
+
     setInterval(function () {
         getContato();
         getMensagens();

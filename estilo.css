@@ -14,8 +14,14 @@ body {
 
 .pagina100{
   height: 100vh;
-  overflow: hidden;
   position: relative;
+  overflow-x: hidden;
+}
+
+.conversa100{
+  height: 100vh;
+  position: relative;
+  overflow-x: hidden;
 }
 
 p {
@@ -25,35 +31,53 @@ p {
 .lista {
   height: calc(100vh - 343px);
   overflow-y: scroll;
+  word-wrap: break-word;
+}
+
+.headerpessoa {
+  word-wrap: break-word;
+}
+
+@media only screen and (max-height: 482px) {
+  .pagina100 footer {
+    position: relative;
+  }
+
+  .lista {
+    height: auto;
+  }
 }
 
 @media only screen and (max-width: 768px) {
-  .lista {
-    height: calc(100% - 371px);
-    overflow-y: scroll;
+  .pagina100 footer {
+    position: relative;
   }
-}
 
-@media only screen and (max-height: 600px) {
-  .pagina100 {
-    overflow-y: auto;
-    height: auto;
+  .conversa100 footer {
+    position: relative;
   }
 
   .lista {
     height: auto;
   }
-}
 
-@media only screen and (max-width: 407px) {
-  .lista {
-    height: calc(100% - 417px);
-    overflow-y: scroll;
+  .listaMensagens{
+    height: 100%;
+  }
+
+  .envio{
+    margin-bottom: 10px;
   }
 }
 
-.paginaContatos {
-  height: calc(100vh - 61px);
+@media only screen and (max-height: 701px) {
+  .conversa100 footer {
+    position: relative;
+  }
+
+  .conversa100 {
+    height: auto;
+  }
 }
 
 .imgperfil:hover{
@@ -66,7 +90,17 @@ p {
 }
 
 .contatoConversa{
-  height: calc(100vh - 60px);
+  height: auto;
+  word-wrap: break-word;
+}
+
+.paginaContatos{
+  width: 100vw;
+}
+
+.paginaConversa{
+  height: calc(100vh - 61px);
+  width: 100vw;
 }
 
 .contatos:hover{
@@ -83,9 +117,7 @@ textarea{
 }
 
 .campoMensagem{
-  position: absolute;
   width: 100%;
-  bottom: auto;
 }
 
 .conversas{
@@ -93,7 +125,8 @@ textarea{
 }
 
 .listaMensagens{
-  height: calc(100vh - 300px);
+  height: calc(100vh - 325px);
+  min-height: 387px;
   overflow-y: scroll;
   overflow-x: hidden;
 }
@@ -133,8 +166,4 @@ footer {
   visibility: hidden;
   width: 0;
   height: 0;
-}
-
-.pagina100 footer {
-  position: relative;
 }
