@@ -49,7 +49,7 @@
             </ul>
         </div>
     </nav>
-    <div class="container p-5">
+    <div class="container perfil p-5">
         <div class="row mb-5 text-center text-md-left">
             <div class="col-md-2 col-xs-12">
                 <form id="formImagem" action="alterarImagem.php" method="POST" enctype="multipart/form-data">
