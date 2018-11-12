@@ -6,8 +6,13 @@ $(document).ready(function () {
     getMensagens();
 
     $('#bold').click(function () {
-        alert($(".emojionearea-editor").getSelection('selectionStart'));
-        //alert($('#txArea').val().substring($('#txArea').selectionStart, $('#txArea').selectionEnd));
+        $texto = $("#txArea").val();
+        $comecoSelecao = $("#txArea").prop("selectionStart");
+        $fimSelecao = $("#txArea").prop("selectionEnd");
+        $textoAntes = $texto.substr(0,$comecoSelecao);
+        $textoDepois = $texto.substr($fimSelecao,$texto.length - $fimSelecao);
+        $selecao = $texto.substr($comecoSelecao,$fimSelecao - $comecoSelecao);
+        $("#txArea").val($textoAntes + "*" + $selecao + "*" + $fimSelecao);
     });
 
     $('#btnImagem').click(function () {

@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS Msmeme CHARACTER SET utf8mb4;
+﻿CREATE DATABASE IF NOT EXISTS Msmeme CHARACTER SET utf8mb4;
 USE Msmeme;
 
 DROP TABLE IF EXISTS Amizades;
@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS Usuario (
 	senha VARCHAR(64) NOT NULL,
 	nickname CHAR(64) NOT NULL,
 	frase CHAR(128) DEFAULT "Olá! Estou usando o MSMEME.",
-	status INT NOT NULL,
+	status INT NOT NULL DEFAULT 0,
 	imagem VARCHAR(128) NOT NULL DEFAULT "padrao.png",
 	PRIMARY KEY(email)
 ) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin;
@@ -39,3 +39,7 @@ CREATE TABLE IF NOT EXISTS Mensagem (
 
 SET GLOBAL lc_time_names=pt_BR;
 SET NAMES utf8mb4;
+
+INSERT INTO Usuario (email, username, senha, nickname) VALUES ("a@a.com","User A","a","User A");
+INSERT INTO Usuario (email, username, senha, nickname) VALUES ("b@b.com","User B","b","User B");
+INSERT INTO Usuario (email, username, senha, nickname) VALUES ("c@c.com","User C","c","User C");

@@ -152,8 +152,8 @@
         crossorigin="anonymous"></script>
 </body>
 <script>
-    $("#txArea").emojioneArea({
+    /*$("#txArea").emojioneArea({
         pickerPosition:"top"
-    });
+    });*/
 </script>
 </html>
