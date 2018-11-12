@@ -6,7 +6,7 @@ $(document).ready(function () {
     getMensagens();
 
     $('#bold').click(function () {
-        alert($(".emojionearea-editor").prop('selectionStart'));
+        alert($(".emojionearea-editor").getSelection('selectionStart'));
         //alert($('#txArea').val().substring($('#txArea').selectionStart, $('#txArea').selectionEnd));
     });
 

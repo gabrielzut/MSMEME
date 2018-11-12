@@ -33,6 +33,9 @@
           if($_GET['msg'] == "sucesso"){
             echo "<div class='alert alert-success' role='alert'>Cadastro efetuado com sucesso!</div>";
           }
+          if($_GET['msg'] == "errocadastro"){
+            echo "<div class='alert alert-danger' role='alert'> Erro no cadastro! </div>";
+          }
         }
         ?>
         <form action="login.php" method="POST">
@@ -63,6 +66,10 @@
                   <div class="form-group">
                     <label for="senhacadastro" class="col-form-label">Senha:</label>
                     <input type="password" class="form-control" id="senhacadastro" placeholder="Senha" name="password">
+                  </div>
+                  <div class="form-group">
+                    <label for="confirmar" class="col-form-label">Confirmar senha:</label>
+                    <input type="password" class="form-control" id="confirmar" placeholder="Confirmar senha" name="confirmar">
                   </div>
                 </div>
                 <div class="modal-footer">
