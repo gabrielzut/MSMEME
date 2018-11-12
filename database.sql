@@ -9,8 +9,8 @@ CREATE TABLE IF NOT EXISTS Usuario (
 	email VARCHAR(128),
 	username VARCHAR(64) NOT NULL,
 	senha VARCHAR(64) NOT NULL,
-	nickname VARCHAR(64) NOT NULL,
-	frase VARCHAR(128) DEFAULT "Olá! Estou usando o MSMEME.",
+	nickname CHAR(64) NOT NULL,
+	frase CHAR(128) DEFAULT "Olá! Estou usando o MSMEME.",
 	status INT NOT NULL,
 	imagem VARCHAR(128) NOT NULL DEFAULT "padrao.png",
 	PRIMARY KEY(email)
@@ -30,6 +30,7 @@ CREATE TABLE IF NOT EXISTS Mensagem (
 	emailEnvio VARCHAR(128) NOT NULL,
 	emailRecebimento VARCHAR(128) NOT NULL,
 	conteudoMensagem VARCHAR(512) CHARACTER SET utf8mb4 NOT NULL,
+	tipoMensagem INT,
 	dataEnvio DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
 	PRIMARY KEY(idMensagem),
 	FOREIGN KEY(emailEnvio) REFERENCES Usuario(email),

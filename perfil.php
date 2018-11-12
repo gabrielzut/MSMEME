@@ -74,11 +74,11 @@
                 <div class="col-md-8 col-xs-12">
                     <div class="form-group">
                         <label for="nickname" class="col-form-label">Apelido:</label>
-                        <input type="text" class="form-control" id="nickname" placeholder="Apelido" name="nickname" value="<?php echo $_SESSION['nickname'];?>">
+                        <input type="text" class="form-control" id="nickname" placeholder="Apelido" name="nickname" maxlength="60" value="<?php echo $_SESSION['nickname'];?>">
                     </div>
                     <div class="form-group">
                         <label for="frase" class="col-form-label">Status:</label>
-                        <input type="text" class="form-control" id="frase" placeholder="Frase" name="frase" value="<?php echo $_SESSION['frase'];?>">
+                        <input type="text" class="form-control" id="frase" placeholder="Frase" name="frase" maxlength="140" value="<?php echo $_SESSION['frase'];?>">
                     </div>
                 </div>
                 <div class="col-md-2 col-xs-12 aligncentro">

@@ -35,10 +35,32 @@
             header('Content-Type: text/html; charset=utf-8');
 
             $emailRecebimento = $_POST["emailConversa"];
-            $conteudo = $_POST["conteudo"];
 
             $conexao = conectar();
-            $sql = "INSERT INTO mensagem (emailEnvio, emailRecebimento, conteudoMensagem) VALUES ('" . $_SESSION['email'] . "','" . $emailRecebimento . "','" . $conteudo . "');";
+
+            if($_POST['envio'] == "texto"){
+                $conteudo = $_POST["conteudo"];
+                $sql = "INSERT INTO mensagem (emailEnvio, emailRecebimento, conteudoMensagem, tipoMensagem) VALUES ('" . $_SESSION['email'] . "','" . $emailRecebimento . "','" . $conteudo . "',0);";
+            }else if($_POST['envio'] == "imagem"){
+                $imagem = $_FILES['imagem'];
+
+                if($imagem['type'] == "image/jpg" || $imagem['type'] == "image/jpeg" || $imagem['type'] == "image/png" || $imagem['type'] == "image/gif" || $imagem['type'] == "image/bmp"){
+                    $nomeTemp = $imagem['tmp_name'];
+                    $extensao = pathinfo($imagem['name'], PATHINFO_EXTENSION);
+
+                    $sqlId = "SELECT auto_increment FROM INFORMATION_SCHEMA.TABLES WHERE table_name = 'mensagem'";
+                    $resultado = executar_sql($conexao, $sqlId);
+                    $arrayResultado = lerResultado($resultado);
+                    $id = $arrayResultado[0]['auto_increment'];
+
+                    $conteudo = $id . "." . $extensao;
+
+                    $sql = "INSERT INTO mensagem (emailEnvio, emailRecebimento, conteudoMensagem, tipoMensagem) VALUES ('" . $_SESSION['email'] . "','" . $emailRecebimento . "','" . $conteudo . "',1);";
+
+                    move_uploaded_file($nomeTemp, './imgConversa/' . $conteudo);
+                }
+            }
+            
             $resultado = executar_sql($conexao, $sql);
         }
     ?>
@@ -89,7 +111,7 @@
             <div class="row mt-3">
                 <div class="col-md-2"></div>
                 <div class="col-md-10">
-                    <form action="conversa.php" method="POST">
+                    <form id="formConversa" action="conversa.php" method="POST" enctype="multipart/form-data">
                         <div class="row campoMensagem">
                             <div class="col-12">
                                 <div class="btn-group" role="group">
@@ -97,7 +119,8 @@
                                     <button type="button" class="btn"><img src="icons/italic.png" width="32px"></button>
                                     <button type="button" class="btn"><img src="icons/under.png" width="32px"></button>
                                     <button type="button" class="btn"><img src="icons/strike.png" width="32px"></button>
-                                    <button type="button" class="btn"><img src="icons/image.png" width="32px"></button>
+                                    <button type="button" class="btn" id="btnImagem" name="btnImagem"><img src="icons/image.png" width="32px"></button>
+                                    <input type="file" id="imagem" name="imagem">
                                 </div>
                             </div>
                             <input type="hidden" id="emailConversa" name="emailConversa" value="<?php echo $_POST['emailConversa'] ?>">
@@ -105,7 +128,7 @@
                                 <textarea id="txArea" name="conteudo" class="form-control my-2" rows="3" ></textarea>
                             </div>
                             <div class="col aligncentro">
-                                <button type="submit" name="envio" value="envio" class="btn btn-lg envio">Enviar</button>
+                                <button id="btnEnvio" type="submit" name="envio" value="texto" class="btn btn-lg envio">Enviar</button>
                             </div>
                         </div>
                     </form>

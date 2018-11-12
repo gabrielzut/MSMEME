@@ -6,8 +6,18 @@ $(document).ready(function () {
     getMensagens();
 
     $('#bold').click(function () {
-        alert(document.getElementById('txArea').selectionStart)
+        alert($(".emojionearea-editor").prop('selectionStart'));
         //alert($('#txArea').val().substring($('#txArea').selectionStart, $('#txArea').selectionEnd));
+    });
+
+    $('#btnImagem').click(function () {
+        $('#imagem').click();
+    })
+
+    $('#formConversa').on('change', "input#imagem", function (e) {
+        e.preventDefault();
+        $('#btnEnvio').val('imagem');
+        $('#btnEnvio').click();
     });
 
     setInterval(function () {
