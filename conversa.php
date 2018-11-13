@@ -41,6 +41,7 @@
             if($_POST['envio'] == "texto"){
                 $conteudo = $_POST["conteudo"];
                 $sql = "INSERT INTO mensagem (emailEnvio, emailRecebimento, conteudoMensagem, tipoMensagem) VALUES ('" . $_SESSION['email'] . "','" . $emailRecebimento . "','" . $conteudo . "',0);";
+                $resultado = executar_sql($conexao, $sql);
             }else if($_POST['envio'] == "imagem"){
                 $imagem = $_FILES['imagem'];
 
@@ -59,9 +60,9 @@
 
                     move_uploaded_file($nomeTemp, './imgConversa/' . $conteudo);
                 }
+                $resultado = executar_sql($conexao, $sql);
             }
             
-            $resultado = executar_sql($conexao, $sql);
         }
     ?>
 </head>
@@ -96,7 +97,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-2 bg-light text-center contatoConversa">
-                    <div class="contatos py-4" id="contato">
+                    <div class="py-4" id="contato">
                         
                     </div>
                     <hr>
@@ -116,9 +117,9 @@
                             <div class="col-12">
                                 <div class="btn-group" role="group">
                                     <button type="button" class="btn" id="bold"><img src="icons/bold.png" width="32px"></button>
-                                    <button type="button" class="btn"><img src="icons/italic.png" width="32px"></button>
-                                    <button type="button" class="btn"><img src="icons/under.png" width="32px"></button>
-                                    <button type="button" class="btn"><img src="icons/strike.png" width="32px"></button>
+                                    <button type="button" class="btn" id="italic"><img src="icons/italic.png" width="32px"></button>
+                                    <button type="button" class="btn" id="under"><img src="icons/under.png" width="32px"></button>
+                                    <button type="button" class="btn" id="strike"><img src="icons/strike.png" width="32px"></button>
                                     <button type="button" class="btn" id="btnImagem" name="btnImagem"><img src="icons/image.png" width="32px"></button>
                                     <input type="file" id="imagem" name="imagem">
                                 </div>
@@ -138,7 +139,7 @@
         <footer class="bg-dark">
             <div class="container">
                 <span class="text-white">
-                    Teste.
+                    Grupo: Caio, Carlos Silva, Fabricio Junior, Gabriel, Vinícius Perna.
                 </span>
             </div>
         </footer>

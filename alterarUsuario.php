@@ -3,6 +3,10 @@ header('Content-Type: text/html; charset=utf-8');
 $nickname = $_POST["nickname"];
 $frase = $_POST["frase"];
 
+if($nickname == ""){
+    $nickname = "N̡̲͔̳a̻m̬e͙l̠͔̥ͅe̷̹͍̯s̖͇͖̥͕͈͇s̡̝̣";
+}
+
 session_start();
 
 $conexao = conectar();

@@ -50,10 +50,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Pesquisa..." aria-label="Search">
-                    <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Pesquisar</button>
-                </form>
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisa..." aria-label="Search" id="pesquisa">
             </ul>
         </div>
     </nav>
@@ -67,7 +64,7 @@
                                 <p class="mt-1"><img src="<?php echo "./img/" . $_SESSION['imagem']?>" class="rounded border border-success status rounded imgperfil bg-white" width="100px" height="100px"></p>
                             </label>
 
-                            <input id="imagem" name="imagem" type="file">
+                            <input id="imagem" name="imagem" type="file" accept="image/*">
                         </form>
                     </div>
                     <div class="col-md-10 col-xs-12 nickfrase">
@@ -93,7 +90,7 @@
         <footer class="bg-dark">
             <div class="container">
                 <span class="text-white">
-                    Teste.
+                    Grupo: Caio, Carlos Silva, Fabricio Junior, Gabriel, Vinícius Perna.
                 </span>
             </div>
         </footer>

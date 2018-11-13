@@ -50,6 +50,17 @@
         </div>
     </nav>
     <div class="container perfil p-5">
+        <div class="row">
+            <div class="col-12">
+                <?php 
+                    if(isset($_GET['msg'])){
+                        if($_GET['msg'] == "erroimagem"){
+                            echo "<div class='alert alert-danger' role='alert'> Erro na alteração de imagem! </div>";
+                        }
+                    }
+                ?>
+            </div>
+        </div>
         <div class="row mb-5 text-center text-md-left">
             <div class="col-md-2 col-xs-12">
                 <form id="formImagem" action="alterarImagem.php" method="POST" enctype="multipart/form-data">
@@ -57,7 +68,7 @@
                         <p class="mt-1"><img src="<?php echo "./img/" . $_SESSION['imagem']?>" class="rounded border border-success status rounded imgperfil bg-white" width="100px" height="100px"></p>
                     </label>
 
-                    <input id="imagem" name="imagem" type="file">
+                    <input id="imagem" name="imagem" type="file" accept="image/*">
                 </form>
             </div>
             <div class="col-md-10 col-xs-12">
@@ -91,6 +102,17 @@
             <h3>Alterar senha</h3>
         </div>
         <form method="POST" action="alterarSenha.php">
+            <div class="row">
+                <div class="col-12">
+                    <?php 
+                        if(isset($_GET['msg'])){
+                            if($_GET['msg'] == "errosenha"){
+                                echo "<div class='alert alert-danger' role='alert'> Erro na alteração! </div>";
+                            }
+                        }
+                    ?>
+                </div>
+            </div>
             <div class="row mb-5">
                 <div class="col-md-8 col-xs-12">
                     <div class="form-group">
@@ -115,7 +137,7 @@
     <footer class="bg-dark">
         <div class="container">
             <span class="text-white">
-                Teste.
+                Grupo: Caio, Carlos Silva, Fabricio Junior, Gabriel, Vinícius Perna.
             </span>
         </div>
     </footer>

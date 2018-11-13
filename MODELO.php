@@ -48,7 +48,7 @@
     <footer class="bg-dark">
         <div class="container">
             <span class="text-white">
-                Teste.
+                Grupo: Caio, Carlos Silva, Fabricio Junior, Gabriel, Vinícius Perna.
             </span>
         </div>
     </footer>

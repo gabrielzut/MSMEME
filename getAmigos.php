@@ -4,8 +4,15 @@
     header('Content-Type: text/html; charset=utf-8');
     session_start();
 
+    $busca = $_POST['pesquisa'];
+
     $conexao = conectar();
-    $sql = "SELECT A.*,UP.email AS emailUP,UP.nickname as nicknameUP,UP.frase as fraseUP,UP.status as statusUP,UP.imagem as imagemUP,US.email as emailUS,US.nickname as nicknameUS,US.frase as fraseUS,US.status as statusUS,US.imagem as imagemUS FROM (Amizades A JOIN Usuario UP ON A.emailUsuario1 = UP.email) JOIN Usuario US ON A.emailUsuario2 = US.email WHERE (A.emailUsuario1='" . $_SESSION['email'] . "' OR A.emailUsuario2='" . $_SESSION['email'] . "') AND A.pedido = 0;";
+
+    if($busca != ""){
+        $sql = "SELECT A.*,UP.email AS emailUP,UP.nickname as nicknameUP,UP.frase as fraseUP,UP.status as statusUP,UP.imagem as imagemUP,US.email as emailUS,US.nickname as nicknameUS,US.frase as fraseUS,US.status as statusUS,US.imagem as imagemUS FROM (Amizades A JOIN Usuario UP ON A.emailUsuario1 = UP.email) JOIN Usuario US ON A.emailUsuario2 = US.email WHERE (A.emailUsuario1='" . $_SESSION['email'] . "' OR A.emailUsuario2='" . $_SESSION['email'] . "') AND A.pedido = 0 AND ((UPPER(US.nickname) LIKE UPPER('%" . $busca . "%')) OR (UPPER(UP.nickname) LIKE UPPER('%" . $busca . "%')));";
+    }else{
+        $sql = "SELECT A.*,UP.email AS emailUP,UP.nickname as nicknameUP,UP.frase as fraseUP,UP.status as statusUP,UP.imagem as imagemUP,US.email as emailUS,US.nickname as nicknameUS,US.frase as fraseUS,US.status as statusUS,US.imagem as imagemUS FROM (Amizades A JOIN Usuario UP ON A.emailUsuario1 = UP.email) JOIN Usuario US ON A.emailUsuario2 = US.email WHERE (A.emailUsuario1='" . $_SESSION['email'] . "' OR A.emailUsuario2='" . $_SESSION['email'] . "') AND A.pedido = 0;";
+    }
     $resultado = executar_sql($conexao, $sql);
     $arrayResultado = lerResultado($resultado);
 
@@ -52,7 +59,7 @@
             ";
         }
     }else{
-        $retorno = "<h4>Você ainda não tem amigos adicionados!</h4>";
+        $retorno = "<h4>Nenhum amigo encontrado!</h4>";
     }
         
     echo $retorno;
