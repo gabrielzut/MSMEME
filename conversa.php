@@ -13,8 +13,6 @@
     <link rel="stylesheet" type="text/CSS" href="estilo.css">
     
     <script src="jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.css">
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.1/emojionearea.min.js"></script>
 
     <script src="js/atualizaConversa.js"></script>
 
@@ -121,6 +119,94 @@
                                     <button type="button" class="btn" id="under"><img src="icons/under.png" width="32px"></button>
                                     <button type="button" class="btn" id="strike"><img src="icons/strike.png" width="32px"></button>
                                     <button type="button" class="btn" id="btnImagem" name="btnImagem"><img src="icons/image.png" width="32px"></button>
+                                    <button type="button" class="btn" id="emoji" data-container="body" data-toggle="popover" data-html="true" data-placement="top" title="<div>Emojis</div>" data-content="
+                                        <div class='container'>
+                                            <div id='carouselEmojis' class='carousel slide' data-ride='carousel'>
+                                                <div class='carousel-inner'>
+                                                    <div class='carousel-item active'>
+                                                        <div class='emojis'>
+                                                            <button type='button' class='btn btn-sm'>😁</button>
+                                                            <button type='button' class='btn btn-sm'>😂</button>
+                                                            <button type='button' class='btn btn-sm'>😃</button>
+                                                            <button type='button' class='btn btn-sm'>😄</button>
+                                                            <button type='button' class='btn btn-sm'>😅</button>
+                                                            <button type='button' class='btn btn-sm'>😆</button>
+                                                            <button type='button' class='btn btn-sm'>😉</button>
+                                                            <button type='button' class='btn btn-sm'>😊</button>
+                                                            <button type='button' class='btn btn-sm'>😋</button>
+                                                            <button type='button' class='btn btn-sm'>😌</button>
+                                                            <button type='button' class='btn btn-sm'>😍</button>
+                                                            <button type='button' class='btn btn-sm'>😏</button>
+                                                            <button type='button' class='btn btn-sm'>😒</button>
+                                                            <button type='button' class='btn btn-sm'>😓</button>
+                                                            <button type='button' class='btn btn-sm'>😔</button>
+                                                            <button type='button' class='btn btn-sm'>😖</button>
+                                                            <button type='button' class='btn btn-sm'>😘</button>
+                                                            <button type='button' class='btn btn-sm'>😚</button>
+                                                            <button type='button' class='btn btn-sm'>😜</button>
+                                                            <button type='button' class='btn btn-sm'>😝</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class='carousel-item'>
+                                                        <div class='emojis'>
+                                                            <button type='button' class='btn btn-sm'>😞</button>
+                                                            <button type='button' class='btn btn-sm'>😠</button>
+                                                            <button type='button' class='btn btn-sm'>😡</button>
+                                                            <button type='button' class='btn btn-sm'>😢</button>
+                                                            <button type='button' class='btn btn-sm'>😣</button>
+                                                            <button type='button' class='btn btn-sm'>😤</button>
+                                                            <button type='button' class='btn btn-sm'>😥</button>
+                                                            <button type='button' class='btn btn-sm'>😨</button>
+                                                            <button type='button' class='btn btn-sm'>😩</button>
+                                                            <button type='button' class='btn btn-sm'>😪</button>
+                                                            <button type='button' class='btn btn-sm'>😫</button>
+                                                            <button type='button' class='btn btn-sm'>😭</button>
+                                                            <button type='button' class='btn btn-sm'>😰</button>
+                                                            <button type='button' class='btn btn-sm'>😱</button>
+                                                            <button type='button' class='btn btn-sm'>😲</button>
+                                                            <button type='button' class='btn btn-sm'>😳</button>
+                                                            <button type='button' class='btn btn-sm'>😵</button>
+                                                            <button type='button' class='btn btn-sm'>😷</button>
+                                                            <button type='button' class='btn btn-sm'>👆</button>
+                                                            <button type='button' class='btn btn-sm'>👇</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class='carousel-item'>
+                                                        <div class='emojis'>
+                                                            <button type='button' class='btn btn-sm'>👈</button>
+                                                            <button type='button' class='btn btn-sm'>👉</button>
+                                                            <button type='button' class='btn btn-sm'>👊</button>
+                                                            <button type='button' class='btn btn-sm'>👋</button>
+                                                            <button type='button' class='btn btn-sm'>👌</button>
+                                                            <button type='button' class='btn btn-sm'>👍</button>
+                                                            <button type='button' class='btn btn-sm'>👎</button>
+                                                            <button type='button' class='btn btn-sm'>👏</button>
+                                                            <button type='button' class='btn btn-sm'>❤</button>
+                                                            <button type='button' class='btn btn-sm'>🐵</button>
+                                                            <button type='button' class='btn btn-sm'>🍉</button>
+                                                            <button type='button' class='btn btn-sm'>🥔</button>
+                                                            <button type='button' class='btn btn-sm'>🍔</button>
+                                                            <button type='button' class='btn btn-sm'>🍕</button>
+                                                            <button type='button' class='btn btn-sm'>🎄</button>
+                                                            <button type='button' class='btn btn-sm'>🏥</button>
+                                                            <button type='button' class='btn btn-sm'>⛪</button>
+                                                            <button type='button' class='btn btn-sm'>🔝</button>
+                                                            <button type='button' class='btn btn-sm'>✅</button>
+                                                            <button type='button' class='btn btn-sm'>❌</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a id='prev' class='carousel-control-prev' href='#carouselEmojis' role='button' data-slide='prev'>
+                                                    <span class='carousel-control-prev-icon mr-5' aria-hidden='true'></span>
+                                                    <span class='sr-only'>Anterior</span>
+                                                </a>
+                                                <a id='next' class='carousel-control-next' href='#carouselEmojis' role='button' data-slide='next'>
+                                                    <span class='carousel-control-next-icon ml-5' aria-hidden='true'></span>
+                                                    <span class='sr-only'>Próxima</span>
+                                                </a>
+                                                </div>
+                                        </div>
+                                    "><img src="icons/emote.png" width="32px"></button>
                                     <input type="file" id="imagem" name="imagem">
                                 </div>
                             </div>

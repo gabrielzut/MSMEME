@@ -34,31 +34,35 @@
                 $amigos[$i]['status'] = $arrayResultado[$i]['statusUP'];
                 $amigos[$i]['imagem'] = $arrayResultado[$i]['imagemUP'];
             }
-            $retorno .= "
-                <form action='conversa.php' method='post' target='_blank'>
-                    <div class='row contatos' onclick='this.parentNode.submit()'>
-                        <input type='hidden' id='emailConversa' name='emailConversa' value='" . $amigos[$i]['email'] . "'>
-                        <div class='col-md-1 col-xs-12'>
-                            <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border ";
-                            if($amigos[$i]['status'] == 0){
-                                $retorno .= "border-secondary";
-                            }else if($amigos[$i]['status'] == 1){
-                                $retorno .= "border-success";
-                            }
-                            $retorno .= " status rounded mt-3' width='40px' height='40px'></p>
+            if(($busca == "")||(strpos(strtoupper($amigos[$i]['nickname']),strtoupper($busca)) !== false)){
+                $retorno .= "
+                    <form action='conversa.php' method='post' target='_blank'>
+                        <div class='row contatos' onclick='this.parentNode.submit()'>
+                            <input type='hidden' id='emailConversa' name='emailConversa' value='" . $amigos[$i]['email'] . "'>
+                            <div class='col-md-1 col-xs-12'>
+                                <p><img src='./img/" . $amigos[$i]['imagem'] . "' class='rounded border ";
+                                if($amigos[$i]['status'] == 0){
+                                    $retorno .= "border-secondary";
+                                }else if($amigos[$i]['status'] == 1){
+                                    $retorno .= "border-success";
+                                }
+                                $retorno .= " status rounded mt-3' width='40px' height='40px'></p>
+                            </div>
+                            <div class='col-md-11 col-xs-12'>
+                                <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
+                                <h6>" . $amigos[$i]['frase'] . "</h6>
+                            </div>
+                            <div class='col-12'>
+                                <hr>
+                            </div>
                         </div>
-                        <div class='col-md-11 col-xs-12'>
-                            <h4 class='mt-2'>" . $amigos[$i]['nickname'] . "</h4>
-                            <h6>" . $amigos[$i]['frase'] . "</h6>
-                        </div>
-                        <div class='col-12'>
-                            <hr>
-                        </div>
-                    </div>
-                </form>
-            ";
+                    </form>
+                ";
+            }
         }
-    }else{
+    }
+
+    if($retorno == ""){
         $retorno = "<h4>Nenhum amigo encontrado!</h4>";
     }
         

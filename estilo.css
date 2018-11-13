@@ -43,13 +43,19 @@ p {
   }
 
   .lista {
-    height: auto;
+    height: 100%;
   }
 }
 
 @media only screen and (min-height: 701px) and (min-width: 768px){
   .conversa100{
     overflow-y: hidden;
+  }
+}
+
+@media only screen and (min-height: 482px) and (min-width: 768px){
+  .pagina100 footer {
+    position: absolute;
   }
 }
 
@@ -63,7 +69,7 @@ p {
   }
 
   .lista {
-    height: auto;
+    height: 100%;
   }
 
   .listaMensagens{
@@ -109,6 +115,7 @@ p {
 }
 
 .paginaContatos{
+  height: calc(100vh - 61px);
   width: 100vw;
 }
 
@@ -184,4 +191,20 @@ footer {
   visibility: hidden;
   width: 0;
   height: 0;
+}
+
+.emojis{
+  margin-left: 8px;
+}
+
+#prev {
+  background: url("./icons/prev.svg") no-repeat left center !important;
+  left: -20px;
+  width: 10%;
+}
+
+#next {
+  background: url("./icons/next.svg") no-repeat right center !important;
+  right: -20px;
+  width: 10%;
 }
