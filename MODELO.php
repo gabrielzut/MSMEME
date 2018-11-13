@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/CSS" href="estilo.css">
+    <link rel="stylesheet" type="text/CSS" href="css/estilo.css">
     <title>MSMEME</title>
     <?php header('Content-Type: text/html; charset=utf-8');?>
 </head>

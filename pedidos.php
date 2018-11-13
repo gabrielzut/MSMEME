@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/CSS" href="estilo.css">
-
-    <script src="jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" type="text/CSS" href="css/estilo.css">
+    <script src="lib/jquery-3.3.1.min.js"></script>
+    <link rel="icon" href="favicon.png" />
 
     <script src="js/atualizaPedidos.js"></script>
 
@@ -67,7 +67,6 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Adicionar amigo</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
