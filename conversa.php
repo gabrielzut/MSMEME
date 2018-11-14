@@ -57,8 +57,13 @@
                     $sql = "INSERT INTO mensagem (emailEnvio, emailRecebimento, conteudoMensagem, tipoMensagem) VALUES ('" . $_SESSION['email'] . "','" . $emailRecebimento . "','" . $conteudo . "',1);";
 
                     move_uploaded_file($nomeTemp, './imgConversa/' . $conteudo);
+                    $resultado = executar_sql($conexao, $sql);
                 }
-                $resultado = executar_sql($conexao, $sql);
+                else{
+                    echo "<script> alert('Arquivo Inválido. Selecione uma Imagem.'); </script>";
+                }
+
+                
             }
             
         }
@@ -207,7 +212,7 @@
                                                 </div>
                                         </div>
                                     "><img src="icons/emote.png" width="32px"></button>
-                                    <input type="file" id="imagem" name="imagem">
+                                    <input type="file" id="imagem" name="imagem" accept="image/*">
                                 </div>
                             </div>
                             <input type="hidden" id="emailConversa" name="emailConversa" value="<?php echo $_POST['emailConversa'] ?>">
