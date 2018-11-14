@@ -7,5 +7,5 @@
     $resultado = executar_sql($conexao, $sql);
 
     session_destroy();
-    header('location:index.php');
+    header('location:../index.php');
 ?>

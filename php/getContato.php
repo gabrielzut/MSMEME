@@ -18,7 +18,7 @@
         }else if($arrayResultado[0]['status'] == 1){
             $retorno .= "border-success";
         }
-        $retorno .= " border-success status rounded' width='100px' height='100px'>
+        $retorno .= " status rounded' width='100px' height='100px'>
         <h4 class='mt-2'>" . $arrayResultado[0]['nickname'] . "</h4>
         <h6>" . $arrayResultado[0]['frase'] . "</h6>
     ";

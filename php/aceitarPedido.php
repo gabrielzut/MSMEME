@@ -13,5 +13,5 @@
     }
     $resultado = executar_sql($conexao, $sql);
     desconectar($conexao);
-    header('Location:pedidos.php');
+    header('Location:../pedidos.php');
 ?>

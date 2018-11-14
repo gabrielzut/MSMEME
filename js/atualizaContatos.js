@@ -11,13 +11,13 @@ $(document).ready(function () {
         getNumPedidos();
     }, 3000);
 
-    function atualizaPesquisa(){
+    function atualizaPesquisa() {
         pesquisa = $('#pesquisa').val();
     }
 
     function getAmigos() {
         $.ajax({
-            url: "getAmigos.php",
+            url: "php/getAmigos.php",
             method: "POST",
             data: {
                 "pesquisa": pesquisa
@@ -30,7 +30,7 @@ $(document).ready(function () {
 
     function getNumPedidos() {
         $.ajax({
-            url: "getNumPedidos.php",
+            url: "php/getNumPedidos.php",
             method: "POST",
             success: function (data) {
                 $('#numPedidos').html(data);

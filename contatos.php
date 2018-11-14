@@ -46,7 +46,7 @@
                     <a class="nav-link" href="perfil.php">Minha conta</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="sair.php">Sair</a>
+                    <a class="nav-link" href="php/sair.php">Sair</a>
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
@@ -59,7 +59,7 @@
             <div class="container text-center text-md-left">
                 <div class="row">
                     <div class="col-md-2 col-xs-12">
-                        <form id="formImagem" action="alterarImagem.php" method="POST" enctype="multipart/form-data">
+                        <form id="formImagem" action="php/alterarImagem.php" method="POST" enctype="multipart/form-data">
                             <label for="imagem">
                                 <p class="mt-1"><img src="<?php echo "./img/" . $_SESSION['imagem']?>" class="rounded border border-success status rounded imgperfil bg-white" width="100px" height="100px"></p>
                             </label>
@@ -95,7 +95,7 @@
             </div>
         </footer>
     </div>
-    <form action="pedidoAmizade.php" method="POST">
+    <form action="php/pedidoAmizade.php" method="POST">
         <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="modalAdicionar" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">

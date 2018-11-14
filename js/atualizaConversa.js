@@ -73,7 +73,7 @@ $(document).ready(function () {
 
     function getContato() {
         $.ajax({
-            url: "getContato.php",
+            url: "php/getContato.php",
             method: "POST",
             data: {
                 "emailConversa": emailConversa
@@ -86,7 +86,7 @@ $(document).ready(function () {
 
     function getMensagens() {
         $.ajax({
-            url: "getMensagens.php",
+            url: "php/getMensagens.php",
             method: "POST",
             data: {
                 "emailConversa": emailConversa

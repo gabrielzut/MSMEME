@@ -13,7 +13,7 @@ if(($username != "")&&($email != "")&&($password != "")&&($confirmar != "")){
         $arrayResultado = lerResultado($resultado);
 
         if(count($arrayResultado) > 0){
-            header('Location:index.php?msg=errocadastro');
+            header('Location:../index.php?msg=errocadastro');
             exit;
         }
 
@@ -21,11 +21,11 @@ if(($username != "")&&($email != "")&&($password != "")&&($confirmar != "")){
         $resultado = executar_sql($conexao, $sql);
         desconectar($conexao);
         
-        header('Location:index.php?msg=sucesso');
+        header('Location:../index.php?msg=sucesso');
     }else{
-        header('Location:index.php?msg=errocadastro');
+        header('Location:../index.php?msg=errocadastro');
     }
 }else{
-    header('Location:index.php?msg=errocadastro');
+    header('Location:../index.php?msg=errocadastro');
 }
 ?>

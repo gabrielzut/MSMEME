@@ -22,7 +22,7 @@
                                 <h3 class='card-title'>" . $arrayResultado[$i]['nickname'] . "</h3>
                             </div>
                             <div class='col-12 col-md-3'>
-                                <form method='POST' action='aceitarPedido.php'>
+                                <form method='POST' action='php/aceitarPedido.php'>
                                     <input type='hidden' id='emailPedido' name='emailPedido' value='" . $arrayResultado[$i]['email'] . "'>
                                     <button class='btn btn-success my-1' type='submit' name='envio' value='1'>Aceitar</button>
                                     <button class='btn btn-danger my-1' type='submit' name='envio' value='0'>Rejeitar</button>

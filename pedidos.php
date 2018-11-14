@@ -45,7 +45,7 @@
                     <a class="nav-link" href="perfil.php">Minha conta</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="sair.php">Sair</a>
+                    <a class="nav-link" href="php/sair.php">Sair</a>
                 </li>
             </ul>
         </div>
@@ -61,7 +61,7 @@
         </div>
     </div>
 
-    <form action="pedidoAmizade.php" method="POST">
+    <form action="php/pedidoAmizade.php" method="POST">
         <div class="modal fade" id="modalAdicionar" tabindex="-1" role="dialog" aria-labelledby="modalAdicionar" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
@@ -86,7 +86,7 @@
     <footer class="bg-dark">
         <div class="container">
             <span class="text-white">
-                Teste.
+                Grupo: Caio, Carlos Silva, Fabricio Junior, Gabriel, Vinícius Perna.
             </span>
         </div>
     </footer>

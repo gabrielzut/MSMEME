@@ -13,9 +13,9 @@ if(($_SESSION['password'] == $antiga) && ($nova == $confirmar)){
     desconectar($conexao);
 
     $_SESSION['password'] = $nova;
-    header('Location:perfil.php?msg=sucessosenha');
+    header('Location:../perfil.php?msg=sucessosenha');
 
 }else{
-    header('Location:perfil.php?msg=errosenha');
+    header('Location:../perfil.php?msg=errosenha');
 }
 ?>

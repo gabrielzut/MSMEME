@@ -19,7 +19,7 @@
     <title>MSMEME</title>
     <?php header('Content-Type: text/html; charset=utf-8');?>
 
-    <?php require "conn.php";
+    <?php require "php/conn.php";
         session_start();
         if(!(isset($_SESSION['email']) && isset($_SESSION['password']))){
             header('location:index.php?msg=erro');
@@ -86,7 +86,7 @@
                     <a class="nav-link" href="perfil.php">Minha conta</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="sair.php">Sair</a>
+                    <a class="nav-link" href="php/sair.php">Sair</a>
                 </li>
             </ul>
         </div>

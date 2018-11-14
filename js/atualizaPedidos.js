@@ -8,7 +8,7 @@ $(document).ready(function () {
 
     function getPedidos() {
         $.ajax({
-            url: "getPedidos.php",
+            url: "php/getPedidos.php",
             method: "POST",
             success: function (data) {
                 $('#pedidos').html(data);

@@ -17,5 +17,5 @@ desconectar($conexao);
 $_SESSION['frase'] = $frase;
 $_SESSION['nickname'] = $nickname;
 
-header('Location:perfil.php?msg=sucessousuario');
+header('Location:../perfil.php?msg=sucessousuario');
 ?>

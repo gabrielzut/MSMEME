@@ -23,10 +23,10 @@
         $_SESSION['imagem'] = $arrayResultado[0]['imagem'];
 
         desconectar($conexao);
-        header('location:contatos.php');
+        header('location:../contatos.php');
     }else{
         session_destroy();
         desconectar($conexao);
-        header('location:index.php?msg=erro');
+        header('location:../index.php?msg=erro');
     }
 ?>

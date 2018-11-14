@@ -40,7 +40,7 @@
           }
         }
         ?>
-        <form action="login.php" method="POST">
+        <form action="php/login.php" method="POST">
           <input type="email" class="form-control mt-3 formlogin" id="email" placeholder="Email" name="email">
           <input type="password" class="form-control formlogin" id="password" placeholder="Senha" name="password">
           <div class="text-center">
@@ -48,7 +48,7 @@
             <button type="button" class="btn btn-success mt-4 w-25" data-toggle="modal" data-target="#modalCadastro">Cadastrar</button>
           </div>
         </form>
-        <form action="cadastro.php" method="POST">
+        <form action="php/cadastro.php" method="POST">
           <div class="modal fade" id="modalCadastro" tabindex="-1" role="dialog" aria-labelledby="modalCadastro" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">

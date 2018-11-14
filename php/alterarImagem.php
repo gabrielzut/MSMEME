@@ -15,12 +15,12 @@
         $sql = "UPDATE Usuario SET imagem = '" . $nomeImagem . "' WHERE email = '" . $_SESSION['email'] . "';";
         $resultado = executar_sql($conexao, $sql);
 
-        move_uploaded_file($nomeTemp, './img/' . $nomeImagem);
+        move_uploaded_file($nomeTemp, '../img/' . $nomeImagem);
 
         $_SESSION['imagem'] = $nomeImagem;
 
-        header('Location:perfil.php');
+        header('Location:../perfil.php');
     } else {
-        header('Location:perfil.php?msg=erroimagem');
+        header('Location:../perfil.php?msg=erroimagem');
     }
 ?>

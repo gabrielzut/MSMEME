@@ -45,7 +45,7 @@
                     <a class="nav-link" href="#">Minha conta</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="sair.php">Sair</a>
+                    <a class="nav-link" href="php/sair.php">Sair</a>
                 </li>
             </ul>
         </div>
@@ -64,7 +64,7 @@
         </div>
         <div class="row mb-5 text-center text-md-left">
             <div class="col-md-2 col-xs-12">
-                <form id="formImagem" action="alterarImagem.php" method="POST" enctype="multipart/form-data">
+                <form id="formImagem" action="php/alterarImagem.php" method="POST" enctype="multipart/form-data">
                     <label for="imagem">
                         <p class="mt-1"><img src="<?php echo "./img/" . $_SESSION['imagem']?>" class="rounded border border-success status rounded imgperfil bg-white" width="100px" height="100px"></p>
                     </label>
@@ -81,7 +81,7 @@
         <div class="row mt-5">
             <h3>Alterar informações de usuário</h3>
         </div>
-        <form method="POST" action="alterarUsuario.php">
+        <form method="POST" action="php/alterarUsuario.php">
             <div class="row">
                 <div class="col-md-8 col-xs-12">
                     <div class="form-group">
@@ -102,13 +102,16 @@
         <div class="row mt-5">
             <h3>Alterar senha</h3>
         </div>
-        <form method="POST" action="alterarSenha.php">
+        <form method="POST" action="php/alterarSenha.php">
             <div class="row">
                 <div class="col-12">
                     <?php 
                         if(isset($_GET['msg'])){
                             if($_GET['msg'] == "errosenha"){
                                 echo "<div class='alert alert-danger' role='alert'> Erro na alteração! </div>";
+                            }
+                            if($_GET['msg'] == "sucessosenha"){
+                                echo "<div class='alert alert-success' role='alert'> Senha alterada com sucesso! </div>";
                             }
                         }
                     ?>
