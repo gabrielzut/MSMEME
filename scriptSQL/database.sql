@@ -40,10 +40,10 @@ CREATE TABLE IF NOT EXISTS Mensagem (
 SET GLOBAL lc_time_names=pt_BR;
 SET NAMES utf8mb4;
 
-INSERT INTO Usuario (email, username, senha, nickname, imagem) VALUES ("a@a.com","Tinky Winky","a","Tinky Winky","a@a.com.png");
-INSERT INTO Usuario (email, username, senha, nickname, imagem) VALUES ("b@b.com","Dipsy","b","Dipsy","b@b.com.png");
-INSERT INTO Usuario (email, username, senha, nickname, imagem) VALUES ("c@c.com","Lala","c","Lala","c@c.com.png");
-INSERT INTO Usuario (email, username, senha, nickname, imagem) VALUES ("d@d.com","Paul","d","Paul","d@d.com.png");
+INSERT INTO Usuario (email, username, frase, senha, nickname, imagem) VALUES ("a@a.com","Tia do zap", "Esperando cair o 13º kkk","a","Tia do zap","a@a.com.png");
+INSERT INTO Usuario (email, username, frase, senha, nickname, imagem) VALUES ("b@b.com","Big different", "Eu UsO lInUx, VcS sAbIaM???","b","Big different","b@b.com.png");
+INSERT INTO Usuario (email, username, frase, senha, nickname, imagem) VALUES ("c@c.com","FORA BANDIDAGEM", "CRIME OCORRE NADA ACONTECE", "c","FORA BANDIDAGEM","c@c.com.png");
+INSERT INTO Usuario (email, username, frase, senha, nickname, imagem) VALUES ("d@d.com","Erilang", "Tá horrível isso, deleta","d","Erilang","d@d.com.png");
 
 INSERT INTO Amizades VALUES ("a@a.com", "b@b.com", 0);
 INSERT INTO Amizades VALUES ("a@a.com", "c@c.com", 0);

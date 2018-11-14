@@ -11,6 +11,8 @@
     crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/CSS" href="css/estilo.css">
+  <link rel="icon" href="favicon.png" />
+
   <title>Bem vindo ao MSMEME!</title>
   <?php header('Content-Type: text/html; charset=utf-8');?>
 </head>
