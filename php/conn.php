@@ -1,6 +1,4 @@
 <?php
-if(!defined("CONST_BASE.PHP")){
-	define("CONST_BASE.PHP", "BASE.PHP importado");
 
 define('S_SERVIDOR', 'localhost');
 define('BD_USUARIO', 'root');
@@ -42,5 +40,5 @@ function lerResultado($resultado){
     mysqli_free_result($resultado);
 	return $arrayResultado;
 }
-}
+
 ?>
