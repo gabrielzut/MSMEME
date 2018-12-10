@@ -38,7 +38,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Contatos<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="#">Contatos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="perfil.php">Minha conta</a>
@@ -48,7 +48,7 @@
                 </li>
             </ul>
             <ul class="navbar-nav ml-auto">
-                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisa..." aria-label="Search" id="pesquisa">
+                <input class="form-control mr-sm-2" type="search" placeholder="Pesquisa..." id="pesquisa">
             </ul>
         </div>
     </nav>
