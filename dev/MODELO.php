@@ -31,7 +31,7 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item"> <!-- COLOCAR ACTIVE NO QUE FOR USAR -->
-                    <a class="nav-link" href="contatos.php">Contatos<span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="contatos.php">Contatos</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="perfil.php">Minha conta</a>
